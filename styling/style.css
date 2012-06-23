@@ -1,0 +1,72 @@
+h1, h2, h3, h4 {
+    margin-left:auto;
+    margin-right:auto;
+    border:5px;
+    padding:5px;
+    width:70%;
+    text-align:center;
+}
+
+p {
+    margin-left:auto;
+    margin-right:auto;
+    border:5px;
+    padding:5px;
+    width:70%;
+    text-align:justify;
+    -moz-word-wrap:break-word;
+}
+
+.center {
+    text-align:center;
+}
+
+code {
+     background-color:#dfdfdf;
+    font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
+}
+
+body {
+    font-size:1.15em;
+    font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
+    color:#686868;
+    margin-left:auto;
+    margin-right:auto;
+    border:5px; 
+    padding:5px;
+    width:96%;
+    box-shadow: 5px 5px 10px 5px #bababa;
+}
+
+
+div.img {
+   -moz-transition:-moz-transform 1s;
+   -webkit-transition:-webkit-transform 1s;
+   -o-transition:-o-transform 1s;
+    margin-left:auto;
+    margin-right:auto;
+    width: 52%;
+    border: 1px;
+    padding: 10px;
+}
+
+div.img:hover {
+ -moz-transform:matrix(1.1,0.01,-0.01,1.1,0,0);
+ -webkit-transform:matrix(1.1,0.2,-0.2,1.1,0,0);
+ -o-transform:matrix(1.1,0.2,-0.2,1.1,0,0);
+}
+
+a:link,a:visited {
+ -moz-transition:background-color 0.5s, color 0.5s, font-size 0.5s;
+ -webkit-transition:background-color 2s, color 2s;
+ -o-transition:background-color 2s, color 2s;
+ color:#686868;	 
+ background-color:#f1f1f1;
+ text-decoration:none;
+}
+a:hover,a:active {
+ color:#000000;
+ background-color:#ffffff;
+ font-size:1.2em;
+ text-decoration:none;
+}

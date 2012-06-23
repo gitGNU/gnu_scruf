@@ -1,0 +1,120 @@
+		Project Scruf.
+
+		    What.
+
+This is a "just for fun" project aiming at converting plain text
+documents to html web pages. We are are focusing on producing
+fundamental and simple web-pages which are clean, yet simple, we will
+be using CSS to ease down on the design and the format of the web-pages
+that are produced by the program.
+
+The plain text document will contain mark-ups that are to frilled by
+the user for the program to identify different elements of the
+document. For instance, a <h2> heading should be surrounded by the
+'==', as it is evident, the number of equals sign (=) is equal to the
+heading number, a <h4> heading should be surrounded '===='. 
+
+
+		An illustration.
+
+	  a marked-up plain text document.
+
+
+== heading two ==
+
+this is paragraph *one*.
+
+this is paragraph _three_.
+
+Do you know how to /count/ ?.
+
+       the html-converted plain text document.
+
+<html>
+<body>
+  <p>this is paragraph <b>one</b>. </p>
+
+  <p>this is paragraph <u>three</u> </p>
+
+  <p>Do you know how to <i>count</i>
+
+</body>
+</html>
+	
+
+<!-- As it is evident from the above html snippet that the paragraphs
+are surrounded by the <p> tag, words surrounded by a '*' is made bold,
+words surrounded by the '_' is underlined, words surrounded by '/' is
+italized. The role of our conversion program will be to identify these
+mark-ups ind the plain text document and according produce to needed
+html tag for that mark up. -->
+
+     	 		    Why.
+
+So why should we write a html conversion program from the scratch when
+we have awesome suites like WordPress and the like. Why re-invent the
+wheel ?.
+
+Here are few reasons by we desire to write from scratch :
+
+     * If we have to adapt or modify an already existing converter, we
+       need to bunch of source files before we can even start thinking
+       about how to adapt it. It takes a lot of time to adapt
+       specifically to our needs.
+
+     * This project aims to project a very very simple, clean and
+       small blogging program which can cater to the user without
+       the need MySQL, PHP or other complex programs.
+
+     * We didn't start this project without a purpose, siddharth
+       wishes to exploit the html converter to host his verbal rambles
+       on his web site. 
+
+			  How.
+
+How are we going to crunch this project ?. What follows gives some
+details about the project.			  
+
+			Platform
+
+The program will be compatible on GNU/Linux machines. We don't have
+plans to have support for Windows/ Mac OSX machines.
+
+    	    	    Programming Language.
+
+The suite will be written in the (filthy) Java programming
+language. OpenJDK 6.0 will be used for compiling the programs.
+
+	  	    Cascading Style Sheets.
+
+The project will also write simple and clean stylesheets for properly
+formatting and frilling the html documents that are produced by the
+programs.
+			Documentation.
+
+A minimalistic documentation to learn the mark-ups will be made
+available for the user to start writing marked-up plain text documents
+ready for html conversion.
+			
+			  Who
+
+	Who is behind this project anyway ?.
+
+
+	 * Sury Narayanan : He will responsible for writing
+           stylesheet to decorate the html docs.
+
+	 * Saravana Bharathy : He will writing the documentation for
+           the mark-ups for the plain text document.   
+
+	 * Siddharth : He will be writing code for the project and he
+           will be the first user of the html converter.  
+	   		  
+
+		        Licensing.
+
+All programs written under the project scruf will be licensed under
+the GNU General Public License v3 or later.		    
+		    
+		    
+		    
