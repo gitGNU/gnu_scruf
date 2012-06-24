@@ -24,6 +24,7 @@ public class ConvertDirectory {
 	    if(file.isFile()) {
 		can = canConvert.check(file);
 		if(can) {
+		    System.out.println("Converting..."+file.getName());
 		    html.convert(file);
 		    index.add(file);
 		}
