@@ -8,9 +8,7 @@ public class Images implements Parser {
 	Matcher matcher = pattern.matcher(fileContent);
 	StringBuffer sbuffer = new StringBuffer();
 	StringBuilder replacementString = new StringBuilder();
-	replacementString.append("<div class=\"img\">");
-	replacementString.append("<image src=\"$1\" alt=\"$3\" />");
-	replacementString.append("</div>");
+	replacementString.append("<img src=\"$1\" alt=\"$3\" title=\"$3\"/>");
 	while(matcher.find()) {
 	    matcher.appendReplacement(sbuffer,replacementString.toString());
 	}
