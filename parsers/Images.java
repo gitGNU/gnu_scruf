@@ -3,8 +3,11 @@ package scruf.parsers;
 import java.util.regex.*;
 
 public class Images implements Parser {
+    // set of strings to build the img tag
+    private String openTag = "<img src=\"$1\"";
+    private String closeTag = " />";
     public String parse(String fileContent) {
-	Pattern pattern = Pattern.compile("\\{\\{(.+\\.(png|jpg))(\\|(.+))?\\}\\}");
+	Pattern pattern = Pattern.compile("\\{\\{(.+\\.(png|jpg))(\\|(.+))?\\}\\}", Pattern.DOTALL);
 	Matcher matcher = pattern.matcher(fileContent);
 	StringBuffer sbuffer = new StringBuffer();
 	StringBuilder replacementString =new StringBuilder();
@@ -12,13 +15,13 @@ public class Images implements Parser {
 	    // empty the builder.
 	    replacementString.delete(0,replacementString.length());
 	    // add the _img_ tag
-	    replacementString.append("<img src=\"$1\"");
+	    replacementString.append(openTag);
 	    // if the "title" is given add to the _img_ tag.
 	    if(matcher.group(3)!=null) {
 		replacementString.append("alt=\"$4\" title=\"$4\"");
 	    }
 	    // close the _img_ tag.
-	    replacementString.append(" />");
+	    replacementString.append(closeTag);
 	    matcher.appendReplacement(sbuffer,replacementString.toString());
 	}
 	matcher.appendTail(sbuffer);
