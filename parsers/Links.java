@@ -4,10 +4,10 @@ import java.util.regex.*;
 
 public class Links implements Parser {
     // set of strings to build the html link
-    private String openTag = "<a href=\"$1\" target=\"_blank\">";
+    private String openTag = "<a href=\"$1\">";
     private String closeTag = "</a>";
     public String parse(String fileContent) {
-	Pattern pattern = Pattern.compile("\\[\\[(.+?)(\\|(.+?))\\]\\]", Pattern.DOTALL);
+	Pattern pattern = Pattern.compile("\\[\\[(.+?)(\\|(.+?))?\\]\\]", Pattern.DOTALL);
 	Matcher matcher = pattern.matcher(fileContent);
 	StringBuffer sbuffer = new StringBuffer();
 	StringBuilder replacementString = new StringBuilder();
@@ -19,6 +19,9 @@ public class Links implements Parser {
 	    // add link name, if given
 	    if(matcher.group(3)!=null) {
 		replacementString.append(matcher.group(3));
+	    }
+	    else {
+		replacementString.append(matcher.group(1));
 	    }
 	    // close the <a> tag
 	    replacementString.append(closeTag);

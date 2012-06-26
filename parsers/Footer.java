@@ -8,7 +8,7 @@ public class Footer implements Parser {
 	Matcher matcher = pattern.matcher(fileContent);
 	StringBuffer sbuffer = new StringBuffer();
 	while(matcher.find()) {
-	    PresentFile.footer = "<footer>"+matcher.group(1)+"</footer>";
+	    PresentFile.footer = "<footer>"+matcher.group(1)+"</footer>\n";
 	    fileContent = new NullIt().nullIt(fileContent,matcher.group());
 	}
 
