@@ -10,8 +10,8 @@ public class ParserList {
 	parsers.add(new DocumentName());
 	parsers.add(new WordDecoration());
 	parsers.add(new CodeBlocks());
-	parsers.add(new Paragraphs());
 	parsers.add(new Headings());
+	parsers.add(new Paragraphs());
 	parsers.add(new Links());
 	parsers.add(new Images());
 	parsers.add(new Footer());
