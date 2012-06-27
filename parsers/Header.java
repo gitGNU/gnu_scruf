@@ -33,9 +33,9 @@ public class Header implements Parser {
 	sbuilder.append(PresentFile.backButton);
 	sbuilder.append("</article>\n");
 	// add "powered by scruf" at bottom of page.
-	sbuilder.append("<div class=\"scruf\">\n");
+	sbuilder.append("\n<div class=\"scruf\">\n");
 	sbuilder.append("powered by scruf");
-	sbuilder.append("</div>");
+	sbuilder.append("\n</div>\n");
 	// Close body tag
 	sbuilder.append("\n</body>\n");
 	sbuilder.append("</html>\n");

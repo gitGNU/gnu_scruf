@@ -15,7 +15,7 @@ public class BackButton implements Parser {
 	    button.append("./\"> back ");
 	}
 	button.append("</a>\n");
-	button.append("</div>");
+	button.append("</div>\n");
 	PresentFile.backButton = button.toString();
 	return fileContent;
     }
