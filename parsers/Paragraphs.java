@@ -15,14 +15,17 @@ public class Paragraphs implements Parser {
 	 * tags in place.
 	 */
 	Pattern pattern = Pattern.compile("((\\={10,})\\n(.+?)\\n(\\2))|((^.+$\\n)+)",Pattern.MULTILINE);
+	Pattern htmlTagPattern = Pattern.compile("^\\<.+?\\>\\n");
 	Matcher matcher = pattern.matcher(fileContent);
+	Matcher htmlTag;
 	StringBuffer sbuffer = new StringBuffer();
 	while(matcher.find()) {
-	    // group 1 contains the regex for the Heading, so
-	    // if that is null, then it means that we have actually
-	    // found a paragraph.
-	    if(matcher.group(1)==null) 
+	    htmlTag = htmlTagPattern.matcher(matcher.group());
+	    if(htmlTag.find()) { 
+		System.out.println(htmlTag.group());
+	    }else {
 		matcher.appendReplacement(sbuffer,paragraph);
+	    }
 	}
 	matcher.appendTail(sbuffer);
 	return sbuffer.toString();
