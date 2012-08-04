@@ -1,72 +1,144 @@
+/*
+ Junicode.ttf,Junicode-Italic.ttf,Junicode-Bold.ttf are Unicode fonts
+ available under the SIL Open Font License, for more details, visit
+ the project's web-page : http://junicode.sourceforge.net/
+*/ 
+@font-face {
+ font-family:junicode;
+ src: url('fonts/Junicode.ttf');
+ font-style:normal;
+}
+@font-face {
+ font-family:junicode;
+ src: url('fonts/Junicode-Italic.ttf');
+ font-style:oblique;
+}
+@font-face {
+ font-family:junicode;
+ src: url('fonts/Junicode-Bold.ttf');
+ font-weight:bold;
+}
+article {
+    font-size:1.188em;
+    font-style:normal;
+    font-family:junicode,serif;
+    color:#686868;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px; 
+    padding:5px;
+    width:97%;
+    box-shadow: 1px 1.5px 3px 0.5px #bababa;	
+}
+
 h1, h2, h3, h4 {
     margin-left:auto;
     margin-right:auto;
-    border:5px;
+    border:1px;
     padding:5px;
-    width:70%;
+    width:75%;
     text-align:center;
 }
-
-p {
+p{
     margin-left:auto;
     margin-right:auto;
-    border:5px;
+    border:1px;
     padding:5px;
     width:70%;
     text-align:justify;
     -moz-word-wrap:break-word;
 }
-
 .center {
     text-align:center;
 }
 
-code {
-     background-color:#dfdfdf;
-    font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
-}
-
-body {
-    font-size:1.15em;
-    font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
-    color:#686868;
+blockquote {
+    font-style:oblique;
+    color:#787878;
+    background-color:#fcfcfc;
     margin-left:auto;
     margin-right:auto;
-    border:5px; 
+    border:1px;
     padding:5px;
-    width:96%;
-    box-shadow: 5px 5px 10px 5px #bababa;
+    width:67%;
+}
+code {
+    border: 1px;
+    padding: 1px;
+    font-size:0.625em;
+    font-family:monospace; 
 }
 
-
-div.img {
-   -moz-transition:-moz-transform 1s;
-   -webkit-transition:-webkit-transform 1s;
-   -o-transition:-o-transform 1s;
+img {
     margin-left:auto;
     margin-right:auto;
-    width: 52%;
+    display:block;
     border: 1px;
     padding: 10px;
 }
-
-div.img:hover {
- -moz-transform:matrix(1.1,0.01,-0.01,1.1,0,0);
- -webkit-transform:matrix(1.1,0.2,-0.2,1.1,0,0);
- -o-transform:matrix(1.1,0.2,-0.2,1.1,0,0);
-}
-
 a:link,a:visited {
- -moz-transition:background-color 0.5s, color 0.5s, font-size 0.5s;
- -webkit-transition:background-color 2s, color 2s;
- -o-transition:background-color 2s, color 2s;
+ transition:border-bottom 0.3s, color 0.3s;
+ -moz-transition:border-bottom 0.3s, color 0.3s;
+ -webkit-transition:border-bottom 0.3s, color 0.3s;
+ -o-transition:border-bottom 0.3s, color 0.3s;
  color:#686868;	 
- background-color:#f1f1f1;
+ border-bottom:1px dotted #d9d9d9;
  text-decoration:none;
 }
 a:hover,a:active {
  color:#000000;
- background-color:#ffffff;
- font-size:1.2em;
+ border-bottom: 1px;
  text-decoration:none;
 }
+
+div.back {
+    font-size:0.9em;
+    font-family:junicode,serif;
+    text-align:center;
+    color:#686868;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px; 
+    padding:5px;
+    width:7%;
+}
+
+footer {
+    font-size:0.7em;
+    font-family:junicode,footer;
+    text-align:center;
+    color:#686868;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px; 
+    padding:5px;
+    width:30%;
+}
+
+/*
+
+LinLibertine_aS.ttf is part of the linuxlibertine font package, it is
+licensed under the GPLv2 and SIL Open Font License (version 1.0).
+
+for more details about this font, visit their project page at
+sourceforge.net :
+http://sourceforge.net/projects/linuxlibertine/
+*/
+
+@font-face {
+ font-family:scruf;
+ src: url('fonts/LinLibertine_aS.ttf');
+}
+div.scruf {
+    font-size:.9em;
+    font-family:scruf,serif;
+    text-align:center;
+    color:#bcbcbc;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px; 
+    padding:5px;
+    width:40%;
+
+}
+

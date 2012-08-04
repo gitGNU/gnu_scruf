@@ -3,7 +3,7 @@ package scruf.parsers;
 import java.util.regex.*;
 
 public class Paragraphs implements Parser {
-    private String paragraph = "<p>\n $0</p>\n";
+    private String paragraph = "<p>\n$0</p>\n";
     public String parse(String fileContent) {
 	/**
 	 * This regex contains two parts seperated by a '|'; the first
@@ -24,8 +24,8 @@ public class Paragraphs implements Parser {
 	StringBuffer sbuffer = new StringBuffer();
 	while(matcher.find()) {
 	    /**
-	     * give the paragraph that is indentified htmlTagPattern
-	     * and see whether the "paragraph" that is actuall
+	     * give the paragraph that is identified htmlTagPattern
+	     * and see whether the "paragraph" that is actually
 	     * deducted is some other html block like <h1> (heading)
 	     * or <blockquote>, etcetera.  "matcher.find()" has
 	     * actually found a html block then we don't need to do
@@ -36,8 +36,10 @@ public class Paragraphs implements Parser {
 	     * if "matcher.find()" _has not_ deducted a html block,
 	     * then we do the conversion.
 	     */
-	    if(!htmlTag.find()) { 
+	    if(!htmlTag.find()) {
 		matcher.appendReplacement(sbuffer,paragraph);
+	    }else {
+		System.out.println("MATCH$"+matcher.group()+" MATCH$$");
 	    }
 	}
 	matcher.appendTail(sbuffer);
