@@ -4,7 +4,7 @@ import java.util.regex.*;
 
 public class CodeBlocks implements Parser {
     public String parse(String fileContent) {
-	Pattern pattern = Pattern.compile("(\\#\\#\\#)\\n*(.+?)\\n*(\\1)",
+	Pattern pattern = Pattern.compile("(\\#\\#\\#)(.+?)(\\1)",
 					  Pattern.DOTALL);
 	Matcher matcher = pattern.matcher(fileContent);
 	LineBreak lbreak = new LineBreak();

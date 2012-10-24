@@ -27,7 +27,7 @@ public class Paragraphs implements Parser {
 	     * give the paragraph that is identified htmlTagPattern
 	     * and see whether the "paragraph" that is actually
 	     * deducted is some other html block like <h1> (heading)
-	     * or <blockquote>, etcetera.  "matcher.find()" has
+	     * or <blockquote>, etcetera. If "matcher.find()" has
 	     * actually found a html block then we don't need to do
 	     * the conversion.
 	     */
