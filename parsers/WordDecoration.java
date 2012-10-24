@@ -13,11 +13,11 @@ public class WordDecoration implements Parser {
 	tagMap.put("__","<u>$7</u>");
 	tagMap.put("'''","<b>$7</b>");
 	tagMap.put("%%%","<blockquote>$7</blockquote>");
-	tagMap.put("`","<div class=\\\"monospace\\\">$7</div>");
+	tagMap.put("`","<span class=\\\"monospace\\\">$7</span>");
     }
     public String parse(String fileContent) {
 	Pattern pattern = 
-	    Pattern.compile("((\\'\\'\\')|(\\_\\_)|(\\'\\')|(\\%\\%\\%))|(\\`))(.+?)((\\2)|(\\3)|(\\4)|(\\5)|(\\6))",
+	    Pattern.compile("((\\'\\'\\')|(\\_\\_)|(\\'\\')|(\\%\\%\\%)|(\\`))(.+?)((\\2)|(\\3)|(\\4)|(\\5)|(\\6))",
 			    Pattern.DOTALL);
 	Matcher matcher = pattern.matcher(fileContent);
 	StringBuffer sbuffer = new StringBuffer();
