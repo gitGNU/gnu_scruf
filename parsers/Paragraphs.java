@@ -26,7 +26,6 @@ import java.util.regex.*;
 public class Paragraphs implements Parser {
     private String paragraph = "<p>\n$0</p>\n";
     public String parse(String fileContent) {
-		System.out.println("Paragraph parsing...");
 	/**
 	 * This regex contains two parts seperated by a '|'; the first
 	 * part is regex for a html Heading (See Heading.java) and the
