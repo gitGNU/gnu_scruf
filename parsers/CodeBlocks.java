@@ -33,7 +33,7 @@ public class CodeBlocks implements Parser {
 	StringBuilder replacement = new StringBuilder();
 	while(matcher.find()) {
 	    replacement.delete(0,replacement.length());
-	    replacement.append("<div class=\\\"code\\\">");
+	    replacement.append("<div class=\"code\">");
 	    replacement.append(quote(lbreak.parse(matcher.group(2))));
 	    replacement.append("</div>");
 	    matcher.appendReplacement(sbuffer,replacement.toString());

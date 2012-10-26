@@ -34,7 +34,7 @@ public class WordDecoration implements Parser {
 	tagMap.put("__","<u>$7</u>");
 	tagMap.put("'''","<b>$7</b>");
 	tagMap.put("%%%","<blockquote>$7</blockquote>");
-	tagMap.put("`","<span class=\\\"monospace\\\">$7</span>");
+	tagMap.put("`","<span class=\"monospace\">$7</span>");
     }
     public String parse(String fileContent) {
 	Pattern pattern = 

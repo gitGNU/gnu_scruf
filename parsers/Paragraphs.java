@@ -26,6 +26,7 @@ import java.util.regex.*;
 public class Paragraphs implements Parser {
     private String paragraph = "<p>\n$0</p>\n";
     public String parse(String fileContent) {
+		System.out.println("Paragraph parsing...");
 	/**
 	 * This regex contains two parts seperated by a '|'; the first
 	 * part is regex for a html Heading (See Heading.java) and the
@@ -39,7 +40,7 @@ public class Paragraphs implements Parser {
 	/**
 	 * This htmlTagPattern has a regex to deduct a html tag.
 	 */
-	Pattern htmlTagPattern = Pattern.compile("^\\<.+?\\>\\n");
+	Pattern htmlTagPattern = Pattern.compile("^\\<.+?\\>(\\n?)");
 	Matcher matcher = pattern.matcher(fileContent);
 	Matcher htmlTag;
 	StringBuffer sbuffer = new StringBuffer();
@@ -58,9 +59,7 @@ public class Paragraphs implements Parser {
 	     * then we do the conversion.
 	     */
 	    if(!htmlTag.find()) {
-		matcher.appendReplacement(sbuffer,paragraph);
-	    }else {
-		System.out.println("MATCH$"+matcher.group()+" MATCH$$");
+			matcher.appendReplacement(sbuffer,paragraph);
 	    }
 	}
 	matcher.appendTail(sbuffer);

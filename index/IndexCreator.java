@@ -54,21 +54,21 @@ public class IndexCreator {
 	}
     }
     public boolean write() {
-	if(modified)
-	    new WriteFile(index,indexContent.toString()).write();
-	return modified;
+		if(modified)
+			new WriteFile(index,indexContent.toString()).write();
+		return modified;
     }
     public File indexFile() {
-	return index;
+		return index;
     }
     private  boolean shouldAdd(String fileName) {
-	String regex = ".*"+fileName+".*";
-	// checks if fileName is already there in index.
-	boolean check1 = !(Pattern.compile(regex).
-			matcher(indexContent.toString()).find());
-	// checks if fileName is index itself.
-	boolean check2 = !(Pattern.matches(fileName,"index"));
-	boolean add = (check1 && check2);
-	return add;
+		String regex = ".*"+fileName+".*";
+		// checks if fileName is already there in index.
+		boolean check1 = !(Pattern.compile(regex).
+						   matcher(indexContent.toString()).find());
+		// checks if fileName is index itself.
+		boolean check2 = !(Pattern.matches(fileName,"index"));
+		boolean add = (check1 && check2);
+		return add;
     }
 }

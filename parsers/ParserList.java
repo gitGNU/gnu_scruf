@@ -29,6 +29,7 @@ public class ParserList {
 	parsers = new ArrayList<Parser>();
 	// add Parsers. NOTE: parser order is significant.
 	parsers.add(new DocumentName());
+	parsers.add(new DocumentDate());
 	parsers.add(new WordDecoration());
 	parsers.add(new CodeBlocks());
 	parsers.add(new Headings());
