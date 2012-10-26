@@ -40,11 +40,11 @@ public class Liberate {
 	pattern = pattern.compile(regex);
 	for(File file:dirContents) {
 	    if(file.isFile()) {
-		matcher = pattern.matcher(file.getName());
-		if(matcher.find()) {
-		    fileContent = new ReadFile(file).getContent();
-		    gpl(file,fileContent);
-		}
+			matcher = pattern.matcher(file.getName());
+			if(matcher.find()) {
+				fileContent = new ReadFile(file).getContent();
+				gpl(file,fileContent);
+			}
 	    }
 	    else {
 		// is a Directory.
@@ -54,16 +54,17 @@ public class Liberate {
     }
 
     private void gpl(File file, String fileContent) {
-	Matcher matcher = Pattern.compile("^/\\*\\+").matcher(fileContent);
-	if(!(matcher.find())) {
-	    StringBuilder sbuilder = new StringBuilder();
-	    sbuilder.append(gpl+"\n");
-	    sbuilder.append(fileContent);
-	    // write baptized content to file.
-	    new WriteFile(file,fileContent).write();
-	}
+		Matcher matcher = Pattern.compile("^/\\*\\+").matcher(fileContent);
+		if(!(matcher.find())) {
+			System.out.println("Baptizing "+file+"...");
+			StringBuilder sbuilder = new StringBuilder();
+			sbuilder.append(gpl+"\n");
+			sbuilder.append(fileContent);
+			// write baptized content to file.
+			new WriteFile(file,sbuilder.toString()).write();
+		}
     }
-
+	
     public static void main(String[] args) {
 	    Liberate libre = new Liberate();
 	    libre.baptize("./scruf/",".+\\.java");

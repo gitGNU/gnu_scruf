@@ -1,27 +1,7 @@
-/*
- Junicode.ttf,Junicode-Italic.ttf,Junicode-Bold.ttf are Unicode fonts
- available under the SIL Open Font License, for more details, visit
- the project's web-page : http://junicode.sourceforge.net/
-*/ 
-@font-face {
- font-family:junicode;
- src: url('fonts/Junicode.ttf');
- font-style:normal;
-}
-@font-face {
- font-family:junicode;
- src: url('fonts/Junicode-Italic.ttf');
- font-style:oblique;
-}
-@font-face {
- font-family:junicode;
- src: url('fonts/Junicode-Bold.ttf');
- font-weight:bold;
-}
 article {
-    font-size:1.188em;
+    font-size:1.50em; /* 1.88 */
     font-style:normal;
-    font-family:junicode,serif;
+    font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     color:#686868;
     margin-left:auto;
     margin-right:auto;
@@ -39,34 +19,49 @@ h1, h2, h3, h4 {
     width:75%;
     text-align:center;
 }
-p{
+p, i, b{
     margin-left:auto;
     margin-right:auto;
     border:1px;
     padding:5px;
     width:70%;
     text-align:justify;
-    -moz-word-wrap:break-word;
+    line-height:170%;
+    /*-moz-word-wrap:break-word;*/
 }
 .center {
     text-align:center;
 }
 
 blockquote {
+    font-size:0.77em;
     font-style:oblique;
     color:#787878;
+    text-align:justify;	
     background-color:#fcfcfc;
     margin-left:auto;
     margin-right:auto;
     border:1px;
     padding:5px;
-    width:67%;
+    width:60%;
 }
-code {
+
+span.monospace {
     border: 1px;
     padding: 1px;
     font-size:0.625em;
-    font-family:monospace; 
+    font-family:monospace;
+}
+
+div.code {
+	font-family:monospace;
+	font-size:0.625em;
+	background-color:#fcfcfc;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px;
+    padding:5px;
+    width:65%;
 }
 
 img {
@@ -93,7 +88,7 @@ a:hover,a:active {
 
 div.back {
     font-size:0.9em;
-    font-family:junicode,serif;
+    font-family:junicode,"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     text-align:center;
     color:#686868;
     margin-left:auto;
@@ -104,34 +99,20 @@ div.back {
 }
 
 footer {
-    font-size:0.7em;
-    font-family:junicode,footer;
+    font-size:0.8em;
+    font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     text-align:center;
     color:#686868;
     margin-left:auto;
     margin-right:auto;
     border:1px; 
     padding:5px;
-    width:30%;
+    width:40%;
 }
 
-/*
-
-LinLibertine_aS.ttf is part of the linuxlibertine font package, it is
-licensed under the GPLv2 and SIL Open Font License (version 1.0).
-
-for more details about this font, visit their project page at
-sourceforge.net :
-http://sourceforge.net/projects/linuxlibertine/
-*/
-
-@font-face {
- font-family:scruf;
- src: url('fonts/LinLibertine_aS.ttf');
-}
 div.scruf {
-    font-size:.9em;
-    font-family:scruf,serif;
+    font-size:0.9em;
+    font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     text-align:center;
     color:#bcbcbc;
     margin-left:auto;
