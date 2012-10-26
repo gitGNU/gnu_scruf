@@ -1,2 +1,16 @@
-IndexGenerator thingy has to be re-written. (why ? I seem to have
-forgotten, need to invistigate).
+# Write a introductory page for scruf.
+  		+ A scruffy begining.
+		+ Liberated.
+		+ Download.
+		+ Rebuke, Critique, etc
+		+ Improve.
+
+# Test it by generating your _full_ homepage using scruf.
+
+# Documentation on how to use scruf.
+
+  		 + The documentation should introduce folks to the scruffy
+           mark-up.
+		 + Tell them how scruf works.
+		 + Tell them how they can use scruf.
+
