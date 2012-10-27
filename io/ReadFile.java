@@ -44,7 +44,7 @@ public class ReadFile {
 				      new FileReader(file));
 	}catch(FileNotFoundException e) {
 	    throw new RuntimeException("Unable to open file :"
-				       +file.getName());
+				       +file.getAbsolutePath());
 	}
 	String line;
 	StringBuilder sbuilder = new StringBuilder();

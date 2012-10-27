@@ -33,13 +33,20 @@ public class IndexCreator {
     // set to true, if index file is modified.
     boolean modified = false;
     public IndexCreator(File directory) {
-	this.directory = directory;
-	index = new File(directory,"index");
-	indexContent = new StringBuilder();
-	if(index.exists()) {
-	    indexContent.append(new ReadFile(index).
-				getContent());
-	}
+		this.directory = directory;
+		index = new File(directory,"index");
+		indexContent = new StringBuilder();
+		if(index.exists()) {
+			indexContent.append(new ReadFile(index).
+								getContent());
+		}else {
+			try {
+				index.createNewFile();
+			}catch(IOException e) {
+				throw new RuntimeException("Unable to create file: "+
+										   index.getAbsolutePath(),e);
+			}
+		}
     }
     public void add(File file) {
 	String fileName = file.getName();
@@ -53,10 +60,20 @@ public class IndexCreator {
 	    modified=true;
 	}
     }
-    public boolean write() {
+    public boolean shouldConvert() {
+		// we assume that index.html exists.
+		boolean indexHTMLExists=true;
 		if(modified)
 			new WriteFile(index,indexContent.toString()).write();
-		return modified;
+		// Check for this existence of index.html.
+		if(!(new File(directory,"index.html").exists())) {
+			indexHTMLExists=false;
+		}
+		/**
+		 * returns true either when 'index' is modified or
+		 * when index.html does not exists.
+		 */
+		return (modified || !indexHTMLExists);
     }
     public File indexFile() {
 		return index;

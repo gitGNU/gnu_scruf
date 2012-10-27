@@ -55,8 +55,9 @@ public class ConvertDirectory {
 	    }
 	}
 	
-	boolean modified = index.write();
-	if(modified)
+	boolean convertIndex = (index.shouldConvert() || 
+							canConvert.check(index.indexFile()));
+	if(convertIndex)
 	    html.convert(index.indexFile());
     }
 }
