@@ -1,3 +1,6 @@
+# IndexCreator must be modified -- the existence of indexHtml can be
+  checked using CanConvert object.
+
 # Test it by generating your _full_ homepage using scruf.
 
 # Documentation on how to use scruf.
