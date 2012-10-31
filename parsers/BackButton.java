@@ -23,21 +23,27 @@ package scruf.parsers;
 
 import java.io.*;
 import scruf.io.*;
+import scruf.status.*;
 
 public class BackButton implements Parser {
     // this method doesn't modify the filContent.
     public String parse(String fileContent) {
-	StringBuilder button = new StringBuilder();
-	button.append("\n<div class=\"back\">\n");
-	button.append("<a href=\"");
-	if(PresentFile.file.getName().equals("index")) {
-	    button.append("../\"> home ");
-	}else {
-	    button.append("./\"> back ");
-	}
-	button.append("</a>\n");
-	button.append("</div>\n");
-	PresentFile.backButton = button.toString();
-	return fileContent;
+		StringBuilder fileBuilder = new StringBuilder(fileContent);
+		/**
+		 * Back button is added only if the present directory being
+		 * parsed is not 'root'.
+		 */
+		if(DirectoryInfo.level!=0) {
+			fileBuilder.append("\n<div class=\"back\">\n");
+			fileBuilder.append("<a href=\"");
+			if(PresentFile.file.getName().equals("index")) {
+				fileBuilder.append("../\"> back ");
+			}else {
+				fileBuilder.append("./\"> back ");
+			}
+			fileBuilder.append("</a>\n");
+			fileBuilder.append("</div>\n");
+		}
+		return fileBuilder.toString();
     }
 }

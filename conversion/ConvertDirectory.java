@@ -23,6 +23,7 @@ package scruf.conversion;
 
 import java.io.*;
 import scruf.index.*;
+import scruf.status.*;
 
 public class ConvertDirectory {
     private ConvertFile html;
@@ -41,22 +42,28 @@ public class ConvertDirectory {
 	// index creator for the present directory.
 	IndexCreator index = new IndexCreator(directory);
 	// iterate through the directory.
+	System.out.println("Current Directory: "+directory.getAbsolutePath());
 	for(File file:directory.listFiles(new FileSieve())) {
 	    if(file.isFile()) {
 		can = canConvert.check(file);
 		if(can) {
-		    System.out.println("Converting..."+file.getName());
+		    System.out.println("Converting..."+file.getAbsolutePath());
 		    html.convert(file);
 		    index.add(file);
 		}
 	    }
 	    else if(file.isDirectory()) {
-		this.convert(file);
+			++DirectoryInfo.level;
+			this.convert(file);
 	    }
 	}
 	boolean convertIndex = (index.shouldConvert() || 
 							canConvert.check(index.indexFile()));
-	if(convertIndex)
+	if(convertIndex) {
+		System.out.println("Converting..."+index.indexFile().getAbsolutePath());
 	    html.convert(index.indexFile());
+	}
+	--DirectoryInfo.level;
     }
+
 }

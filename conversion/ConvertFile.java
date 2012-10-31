@@ -34,11 +34,6 @@ public class ConvertFile {
     }
     public void convert(File file) {
 		/**
-		 * footer is optional, so it is null
-		 * by default.
-		 */
-		PresentFile.footer = null;
-		/**
 		 * takes the present file reference
 		 * for use outside this method.
 		 */

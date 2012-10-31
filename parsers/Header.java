@@ -46,12 +46,6 @@ public class Header implements Parser {
 	sbuilder.append("<article>\n");
 	// insert File Content.
 	sbuilder.append(fileContent);
-	// add footer if footer is available.
-	if(PresentFile.footer!=null) {
-	    sbuilder.append(PresentFile.footer);
-	}
-	// insert back button.
-	sbuilder.append(PresentFile.backButton);
 	sbuilder.append("</article>\n");
 	// add "powered by scruf" at bottom of page.
 	sbuilder.append("\n<div class=\"scruf\">\n");

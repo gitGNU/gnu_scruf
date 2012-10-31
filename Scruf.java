@@ -25,6 +25,7 @@ import java.io.*;
 import scruf.io.*;
 import scruf.conversion.*;
 import scruf.styling.*;
+import scruf.status.*;
 import scruf.index.*;
 
 public class Scruf {
@@ -43,6 +44,7 @@ public class Scruf {
 	    }
 	    directory = new File(dir).getAbsoluteFile();
 	    styleSheet.resolve(directory);
+		DirectoryInfo.level=0;
 	    html.convert(directory);
 	}
     }
