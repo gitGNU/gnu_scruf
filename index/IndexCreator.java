@@ -39,13 +39,6 @@ public class IndexCreator {
 		if(index.exists()) {
 			indexContent.append(new ReadFile(index).
 								getContent());
-		}else {
-			try {
-				index.createNewFile();
-			}catch(IOException e) {
-				throw new RuntimeException("Unable to create file: "+
-										   index.getAbsolutePath(),e);
-			}
 		}
     }
     public void add(File file) {
@@ -61,19 +54,9 @@ public class IndexCreator {
 	}
     }
     public boolean shouldConvert() {
-		// we assume that index.html exists.
-		boolean indexHTMLExists=true;
 		if(modified)
 			new WriteFile(index,indexContent.toString()).write();
-		// Check for this existence of index.html.
-		if(!(new File(directory,"index.html").exists())) {
-			indexHTMLExists=false;
-		}
-		/**
-		 * returns true either when 'index' is modified or
-		 * when index.html does not exists.
-		 */
-		return (modified || !indexHTMLExists);
+		return (modified);
     }
     public File indexFile() {
 		return index;

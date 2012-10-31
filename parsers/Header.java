@@ -55,7 +55,7 @@ public class Header implements Parser {
 	sbuilder.append("</article>\n");
 	// add "powered by scruf" at bottom of page.
 	sbuilder.append("\n<div class=\"scruf\">\n");
-	sbuilder.append("<a href=\"/scruf/\">powered by scruf</a>");
+	sbuilder.append("<a href=\"https://savannah.nongnu.org/projects/scruf/\">powered by scruf</a>");
 	sbuilder.append("\n</div>\n");
 	// Close body tag
 	sbuilder.append("\n</body>\n");

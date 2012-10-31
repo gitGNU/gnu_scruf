@@ -54,7 +54,6 @@ public class ConvertDirectory {
 		this.convert(file);
 	    }
 	}
-	
 	boolean convertIndex = (index.shouldConvert() || 
 							canConvert.check(index.indexFile()));
 	if(convertIndex)

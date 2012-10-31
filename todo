@@ -1,5 +1,4 @@
-# IndexCreator must be modified -- the existence of indexHtml can be
-  checked using CanConvert object.
+# the root page (of a site) should not have a ''home'' or ''back'' button. 
 
 # Test it by generating your _full_ homepage using scruf.
 
