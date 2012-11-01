@@ -1,3 +1,7 @@
+# way to ignore directories
+
+# extension for scruff marked-up files to make discovery easier.
+
 # introduction to 'scruffy' mark-up.
 
 # Test it by generating your _full_ homepage using scruf.
