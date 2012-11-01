@@ -28,15 +28,16 @@ public class ParserList {
     public ParserList() {
 	parsers = new ArrayList<Parser>();
 	// add Parsers. NOTE: parser order is significant.
+	parsers.add(new QuoteSpecialText());
 	parsers.add(new DocumentName());
 	parsers.add(new DocumentDate());
 	parsers.add(new WordDecoration());
 	parsers.add(new CodeBlocks());
 	parsers.add(new Headings());
-	parsers.add(new Paragraphs());
 	parsers.add(new Links());
 	parsers.add(new Images());
 	parsers.add(new Footer());
+	parsers.add(new Paragraphs());
 	parsers.add(new BackButton());
 	parsers.add(new Header());
     }

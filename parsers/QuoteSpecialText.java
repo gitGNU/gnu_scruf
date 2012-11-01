@@ -21,19 +21,26 @@
 
 package scruf.parsers;
 
+import java.util.*;
 import java.util.regex.*;
-import scruf.io.*;
-public class Footer implements Parser {
-    public String parse(String fileContent) {
-	Pattern pattern = Pattern.compile("\\-{70}\\n(.+)\\n\\-{70}");
-	Matcher matcher = pattern.matcher(fileContent);
-	StringBuffer sbuffer = new StringBuffer();
-	String footer=null;
-	while(matcher.find()) {
-		footer = "\n<footer>"+matcher.group(1)+"</footer>\n";
-		matcher.appendReplacement(sbuffer,footer);
+
+public class QuoteSpecialText implements Parser {
+	Map<String,String> qmap;
+	public QuoteSpecialText() {
+		qmap = new HashMap<String,String>();
+		qmap.put("&","&amp;");
+		qmap.put("<","&lt;");
+		qmap.put(">","&gt;");
 	}
-	matcher.appendTail(sbuffer);
-	return sbuffer.toString();
-    }
+	public String parse(String fileContent) {
+		Pattern pattern = Pattern.compile("(\\&)|(\\<)|(\\>)");
+		Matcher matcher = pattern.matcher(fileContent);
+		StringBuffer sbuffer = new StringBuffer();
+		while(matcher.find()) {
+			matcher.appendReplacement(sbuffer,
+									  qmap.get(matcher.group()));
+		}
+		matcher.appendTail(sbuffer);
+		return sbuffer.toString();
+	}
 }
