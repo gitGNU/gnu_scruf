@@ -1,0 +1,21 @@
+scruffy
+
+==========
+Scruffy
+==========
+
+Scruffy is a mark-up that is out right shabby and squalid, it is, in a
+way inspired from the markup used in MoinMoin and MediaWiki. If it is
+desired that the text version of the HTML files, that are to be,
+generated, look sane enough to be interpreted as ''plain text'', it is
+suggested that you look for static HTML generators that accept
+Markdown. Markdown looks sane. Scruffy, as the name implies, is an
+insane markup.
+
+With that, I leave you, to make a choice, whether you wish to use
+Scruffy, and thus Scruf, at all.
+
+==============================
+basic structure
+==============================
+
