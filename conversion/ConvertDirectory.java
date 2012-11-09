@@ -24,6 +24,7 @@ package scruf.conversion;
 import java.io.*;
 import scruf.index.*;
 import scruf.status.*;
+import scruf.conversion.ignore.*;
 
 public class ConvertDirectory {
     private ConvertFile html;
@@ -39,6 +40,9 @@ public class ConvertDirectory {
 			       " No conversion done on.");
 	    return;
 	}
+	// Ignored object maintains a list of 'ignored' sub-directories
+	// in this directory.
+	Ignored ignored = new Ignored(directory);
 	// index creator for the present directory.
 	IndexCreator index = new IndexCreator(directory);
 	// iterate through the directory.
@@ -53,8 +57,12 @@ public class ConvertDirectory {
 		}
 	    }
 	    else if(file.isDirectory()) {
-			++DirectoryInfo.level;
-			this.convert(file);
+			// Perform conversion, only if, directory
+			// is not a ignored directory.
+			if(!ignored.ignored(file)) {
+				++DirectoryInfo.level;
+				this.convert(file);
+			}
 	    }
 	}
 	boolean convertIndex = (index.shouldConvert() || 

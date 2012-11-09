@@ -1,21 +1,88 @@
-scruffy
+scruf - documentation
 
 ==========
-Scruffy
+scruf - documentation
 ==========
 
-Scruffy is a mark-up that is out right shabby and squalid, it is, in a
-way inspired from the markup used in MoinMoin and MediaWiki. If it is
-desired that the text version of the HTML files, that are to be,
-generated, look sane enough to be interpreted as ''plain text'', it is
-suggested that you look for static HTML generators that accept
-Markdown. Markdown looks sane. Scruffy, as the name implies, is an
-insane markup.
+ ''scruf'' is a simple program that converts text marked-up in
+''scruffy'' mark-up to HTML5 files. It was written specifically for
+generating blog posts. The way ''scruf'' works is straight forward --
+it takes in directory and converts all the ''scruffy'' marked-up
+plain-text files into corresponding HTML5 files. After the conversion,
+''scruf'' puts links to the generated HTML5 files in the `index.html`
+file of that directory. So, that's how ''scruf'' works.
 
-With that, I leave you, to make a choice, whether you wish to use
-Scruffy, and thus Scruf, at all.
+====================
+using scruf
+====================
+
+Before you plunge into learning about scruf and eventually using
+it. Let me run you through the pre-requisites.
+
+ '''Paraphernalia''': ''scruf'' is written in Java, therefore, you'll
+ need the `openjdk` package, inorder to be able to compile and run
+ scruf. Go ahead and install `openjdk` before proceeding
+ forward. Number two, ''scruf'' was written on a GNU/Linux machine,
+ so, it should work well on all Unix-based operating systems.
+
+Once, you have a copy of `openjdk` installed on your machine, you're
+all set to start licking ''scruf''. Here we go.  
 
 ==============================
+scruffy mark-up
+==============================
+
+Inorder to convert plain-text files into HTML5 using ''scruf'', you
+got to mark it up with the ''scruff'' mark-up, so that ''scruf''
+understands the elements of the plain-text document and duly converts
+them into HTML5. As the name suggests ''scruffy'' mark is pretty
+shabby when compared to cleaner mark-ups like
+[[http://daringfireball.net/projects/markdown/|Markdown]]. ''scruffy''
+is inspired, to an extent, from [[http://moinmo.in/|MoinMoin]] &
+[[http://www.mediawiki.org/wiki/MediaWiki|MediaWiki]] syntax.
+
+
+========================================
 basic structure
-==============================
+========================================
 
+The ''scruffy'' plain-text document that is going to be converted by
+''scruf'', follows a format and here it is: 
+
+###
+
+title
+
+==========
+foo heading
+==========
+
+$$$ 1 January 1970 $$$
+
+The bar blog post goes like this...
+...
+...
+the bar blog post ends
+
+----------------------------------------------------------------------
+author's signature
+----------------------------------------------------------------------
+
+###
+
+The first line in the ''scruffy'' document __must__ always begin with
+the text of the title of the document. The ''title'' is the string
+that is going to be displayed on the browser tabs and for compliance
+sake, it is recommended that it be same as the ''heading'' of the
+''scruffy'' document. Followed by the ''title'' is the heading, then
+the body of the post/essay/whatever and finally the author's
+signature. This is the basic structure of a ''scruffy'' document.
+
+
+========================================
+syntax
+========================================
+
+==============================
+running scruf
+==============================

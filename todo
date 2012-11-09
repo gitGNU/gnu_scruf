@@ -1,7 +1,13 @@
-# way to ignore directories
+# 'quote' special symbols inside a code-block.
+
+# include a link or something to view the 'source'. [working on this one]
+
+# introduce 'meta' info in html doc generated -- authorinfo, date of creation, etc.
+
+-- way to ignore directories -- [done]
 
 # extension for scruff marked-up files to make discovery easier.
 
-# introduction to 'scruffy' mark-up.
+* introduction to 'scruf' & 'scruffy' mark-up. [working on this one]
 
 # Test it by generating your _full_ homepage using scruf.
