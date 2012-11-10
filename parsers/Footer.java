@@ -28,11 +28,12 @@ public class Footer implements Parser {
 	Pattern pattern = Pattern.compile("\\-{70}\\n(.+)\\n\\-{70}");
 	Matcher matcher = pattern.matcher(fileContent);
 	StringBuffer sbuffer = new StringBuffer();
+	String footer=null;
 	while(matcher.find()) {
-	    PresentFile.footer = "\n<footer>"+matcher.group(1)+"</footer>\n";
-	    fileContent = new NullIt().nullIt(fileContent,matcher.group());
+		footer = "\n<footer>"+matcher.group(1)+"</footer>\n";
+		matcher.appendReplacement(sbuffer,footer);
 	}
-
-	return fileContent;
+	matcher.appendTail(sbuffer);
+	return sbuffer.toString();
     }
 }

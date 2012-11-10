@@ -23,6 +23,8 @@ package scruf.conversion;
 
 import java.io.*;
 import scruf.index.*;
+import scruf.status.*;
+import scruf.conversion.ignore.*;
 
 public class ConvertDirectory {
     private ConvertFile html;
@@ -38,25 +40,38 @@ public class ConvertDirectory {
 			       " No conversion done on.");
 	    return;
 	}
+	// Ignored object maintains a list of 'ignored' sub-directories
+	// in this directory.
+	Ignored ignored = new Ignored(directory);
 	// index creator for the present directory.
 	IndexCreator index = new IndexCreator(directory);
 	// iterate through the directory.
+	System.out.println("Current Directory: "+directory.getAbsolutePath());
 	for(File file:directory.listFiles(new FileSieve())) {
 	    if(file.isFile()) {
 		can = canConvert.check(file);
 		if(can) {
-		    System.out.println("Converting..."+file.getName());
+		    System.out.println("Converting..."+file.getAbsolutePath());
 		    html.convert(file);
 		    index.add(file);
 		}
 	    }
 	    else if(file.isDirectory()) {
-		this.convert(file);
+			// Perform conversion, only if, directory
+			// is not a ignored directory.
+			if(!ignored.ignored(file)) {
+				++DirectoryInfo.level;
+				this.convert(file);
+			}
 	    }
 	}
-	
-	boolean modified = index.write();
-	if(modified)
+	boolean convertIndex = (index.shouldConvert() || 
+							canConvert.check(index.indexFile()));
+	if(convertIndex) {
+		System.out.println("Converting..."+index.indexFile().getAbsolutePath());
 	    html.convert(index.indexFile());
+	}
+	--DirectoryInfo.level;
     }
+
 }

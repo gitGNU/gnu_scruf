@@ -19,21 +19,28 @@
  */
 
 
-package scruf.io;
+package scruf.parsers;
 
-import java.io.*;
+import java.util.*;
+import java.util.regex.*;
 
-/**
- * Contains information about the present file that
- * is being parsed by the parsers. 
- * 
- */
-public class PresentFile {
-    public static String name;
-    public static String footer;
-    public static String backButton;
-    public static File file;
+public class QuoteSpecialText implements Parser {
+	Map<String,String> qmap;
+	public QuoteSpecialText() {
+		qmap = new HashMap<String,String>();
+		qmap.put("&","&amp;");
+		qmap.put("<","&lt;");
+		qmap.put(">","&gt;");
+	}
+	public String parse(String fileContent) {
+		Pattern pattern = Pattern.compile("(\\&)|(\\<)|(\\>)");
+		Matcher matcher = pattern.matcher(fileContent);
+		StringBuffer sbuffer = new StringBuffer();
+		while(matcher.find()) {
+			matcher.appendReplacement(sbuffer,
+									  qmap.get(matcher.group()));
+		}
+		matcher.appendTail(sbuffer);
+		return sbuffer.toString();
+	}
 }
-    
-
-    

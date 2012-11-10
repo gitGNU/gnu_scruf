@@ -21,19 +21,16 @@
 
 package scruf.parsers;
 
-import java.io.*;
 import scruf.status.*;
 
-public class DocumentName implements Parser {
-    public String parse(String fileContent) {
-		BufferedReader read = 
-			new BufferedReader(new StringReader(fileContent));
-		try {
-			PresentFile.name = read.readLine();
-		}catch(IOException e) {
-			System.err.println("Error reading string "+e);
-		}
-		fileContent = new NullIt().nullIt(fileContent,PresentFile.name);
-		return fileContent;
-    }
+public class Source implements Parser {
+	private StringBuilder sbuilder;
+	public String parse(String fileContent) {
+		sbuilder = new StringBuilder(fileContent);
+		// append a link to the source.
+		sbuilder.append("\n <div class=\"source\"> \n");
+		sbuilder.append("\n <a href=\"./"+PresentFile.file.getName()+
+						"\">source</a> \n </div>");
+		return sbuilder.toString();
+	}
 }

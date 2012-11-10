@@ -25,7 +25,7 @@ import java.util.regex.*;
 
 public class CodeBlocks implements Parser {
     public String parse(String fileContent) {
-	Pattern pattern = Pattern.compile("(\\#\\#\\#)(.+?)(\\1)",
+	Pattern pattern = Pattern.compile("(\\#\\#\\#)(\\n+)(.+?)(\\n+)(\\1)",
 					  Pattern.DOTALL);
 	Matcher matcher = pattern.matcher(fileContent);
 	LineBreak lbreak = new LineBreak();
@@ -34,7 +34,7 @@ public class CodeBlocks implements Parser {
 	while(matcher.find()) {
 	    replacement.delete(0,replacement.length());
 	    replacement.append("<div class=\"code\">");
-	    replacement.append(quote(lbreak.parse(matcher.group(2))));
+	    replacement.append(lbreak.parse(quote(matcher.group(3))));
 	    replacement.append("</div>");
 	    matcher.appendReplacement(sbuffer,replacement.toString());
 	}
@@ -53,9 +53,8 @@ public class CodeBlocks implements Parser {
 	StringBuffer sbuffer = new StringBuffer();
 	String rep;
 	while(matcher.find()) {
-	    rep = "\\\\\\"+matcher.group();
+		rep = "\\\\\\"+matcher.group();
 	    matcher.appendReplacement(sbuffer,rep);
-
 	}
 	matcher.appendTail(sbuffer);
 	return sbuffer.toString();

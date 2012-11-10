@@ -25,33 +25,32 @@ import scruf.io.*;
 import scruf.parsers.*;
 import java.util.*;
 import java.io.*;
+import scruf.status.*;
 
 public class ConvertFile {
     private List<Parser> parsers;
     private ReadFile readFile;
+	private CreateHtmlFile htmlFile;
     public ConvertFile() {
-	parsers = new ParserList().list();
+		parsers = new ParserList().list();
+		htmlFile = new CreateHtmlFile();
     }
     public void convert(File file) {
-	/**
-	 * footer is optional, so it is null
-	 * by default.
-	 */
-	PresentFile.footer = null;
-	/**
-	 * takes the present file reference
-	 * for use outside this method.
-	 */
-	PresentFile.file = file;
-	readFile = new ReadFile(file);
-	String fileContent = readFile.getContent();
-	// start conversion.
-	for(Parser p:parsers) {
-	    fileContent = p.parse(fileContent);
-	}
-
-	// Write converted file to respective html file.
-	File outputFile = new File(file.getAbsolutePath()+".html");
-	new WriteFile(outputFile,fileContent).write();
+		/**
+		 * takes the present file reference
+		 * for use outside this method.
+		 */
+		PresentFile.file = file;
+		readFile = new ReadFile(file);
+		String fileContent = readFile.getContent();
+		if(!fileContent.equals("")) {
+			// start conversion.
+			for(Parser p:parsers) {
+				fileContent = p.parse(fileContent);
+				
+			}
+		}
+		// Write to corresponding html file.
+		new WriteFile(htmlFile.create(),fileContent).write();
     }
 }

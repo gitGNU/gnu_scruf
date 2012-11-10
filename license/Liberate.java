@@ -67,7 +67,7 @@ public class Liberate {
 	
     public static void main(String[] args) {
 	    Liberate libre = new Liberate();
-	    libre.baptize("./scruf/",".+\\.java");
+	    libre.baptize("./scruf/",".+\\.java$");
     }
     
 }

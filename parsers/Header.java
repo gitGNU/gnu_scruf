@@ -21,7 +21,7 @@
 
 package scruf.parsers;
 
-import scruf.io.*;
+import scruf.status.*;
 
 public class Header implements Parser {
     
@@ -46,21 +46,14 @@ public class Header implements Parser {
 	sbuilder.append("<article>\n");
 	// insert File Content.
 	sbuilder.append(fileContent);
-	// add footer if footer is available.
-	if(PresentFile.footer!=null) {
-	    sbuilder.append(PresentFile.footer);
-	}
-	// insert back button.
-	sbuilder.append(PresentFile.backButton);
 	sbuilder.append("</article>\n");
 	// add "powered by scruf" at bottom of page.
 	sbuilder.append("\n<div class=\"scruf\">\n");
-	sbuilder.append("<a href=\"/scruf/\">powered by scruf</a>");
+	sbuilder.append("<a href=\"http://nongnu.org/scruf/\">powered by scruf</a>");
 	sbuilder.append("\n</div>\n");
 	// Close body tag
 	sbuilder.append("\n</body>\n");
 	sbuilder.append("</html>\n");
-
 	return sbuilder.toString();
     }
 

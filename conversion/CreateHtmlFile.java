@@ -19,21 +19,33 @@
  */
 
 
-package scruf.parsers;
+package scruf.conversion;
 
 import java.io.*;
+import java.util.regex.*;
 import scruf.status.*;
 
-public class DocumentName implements Parser {
-    public String parse(String fileContent) {
-		BufferedReader read = 
-			new BufferedReader(new StringReader(fileContent));
-		try {
-			PresentFile.name = read.readLine();
-		}catch(IOException e) {
-			System.err.println("Error reading string "+e);
+public class CreateHtmlFile {
+	private Pattern pattern = Pattern.compile("(.+?\\.)scruffy");
+	private Matcher matcher;
+	private File htmlFile=null;
+	/** 
+	 *	This method uses PresentFile.file as the 'file' for
+	 *  which a corresponding 'htmlFile' has to be created.
+	 */
+	public File create() {
+		return create(PresentFile.file);
+	}
+	public File create(File file) {
+		htmlFile=null;
+		matcher = pattern.matcher(file.getName());
+		if(matcher.find()) {
+			htmlFile = new File(file.getParentFile(),
+								matcher.group(1)+"html");
+		}else {
+			System.err.println("ERROR: something wrong with scruf: unable to create html file"+
+							   " for "+PresentFile.file.getName());
 		}
-		fileContent = new NullIt().nullIt(fileContent,PresentFile.name);
-		return fileContent;
-    }
+		return htmlFile;
+	}
 }

@@ -19,21 +19,13 @@
  */
 
 
-package scruf.parsers;
+package scruf.status;
 
-import java.io.*;
-import scruf.status.*;
-
-public class DocumentName implements Parser {
-    public String parse(String fileContent) {
-		BufferedReader read = 
-			new BufferedReader(new StringReader(fileContent));
-		try {
-			PresentFile.name = read.readLine();
-		}catch(IOException e) {
-			System.err.println("Error reading string "+e);
-		}
-		fileContent = new NullIt().nullIt(fileContent,PresentFile.name);
-		return fileContent;
-    }
+public class DirectoryInfo {
+	/**
+	 * This variable stores the 'level' at which
+	 * scruf is parsing the files with respect to
+	 * root.
+	 */
+	public static int level;
 }

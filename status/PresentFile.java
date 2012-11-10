@@ -19,21 +19,19 @@
  */
 
 
-package scruf.parsers;
+package scruf.status;
 
 import java.io.*;
-import scruf.status.*;
 
-public class DocumentName implements Parser {
-    public String parse(String fileContent) {
-		BufferedReader read = 
-			new BufferedReader(new StringReader(fileContent));
-		try {
-			PresentFile.name = read.readLine();
-		}catch(IOException e) {
-			System.err.println("Error reading string "+e);
-		}
-		fileContent = new NullIt().nullIt(fileContent,PresentFile.name);
-		return fileContent;
-    }
+/**
+ * Contains information about the present file that
+ * is being parsed by the parsers. 
+ * 
+ */
+public class PresentFile {
+    public static String name;
+    public static File file;
 }
+    
+
+    

@@ -1,2 +1,17 @@
-IndexGenerator thingy has to be re-written. (why ? I seem to have
-forgotten, need to invistigate).
+# 'quote' special symbols inside a code-block.
+
+# introduce 'meta' info in html doc generated -- authorinfo, date of creation, etc.
+
+* introduction to 'scruf' & 'scruffy' mark-up. [working on this one]
+
+# Test it by generating your _full_ homepage using scruf.
+
+[done] way to ignore directories 
+
+[done] move PresentFile.java to status/
+
+[done] extension for scruff marked-up files to make discovery easier.
+
+[done] modify conversion/CanConvert.java (bug)
+
+[done] include a link or something to view the 'source'.

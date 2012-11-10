@@ -19,21 +19,36 @@
  */
 
 
-package scruf.parsers;
+package scruf.conversion.ignore;
 
 import java.io.*;
-import scruf.status.*;
+import scruf.io.*;
 
-public class DocumentName implements Parser {
-    public String parse(String fileContent) {
-		BufferedReader read = 
-			new BufferedReader(new StringReader(fileContent));
-		try {
-			PresentFile.name = read.readLine();
-		}catch(IOException e) {
-			System.err.println("Error reading string "+e);
+public class Ignored {
+	private String ignoredList[];
+	public Ignored(File directory) {
+		File ignoredFile = new File(directory,".ignored");
+		if(ignoredFile.exists()) {
+			ignoredList = new ReadFile(ignoredFile).split("\n");
 		}
-		fileContent = new NullIt().nullIt(fileContent,PresentFile.name);
-		return fileContent;
-    }
+	}
+	public boolean ignored(File subdirectory) {
+		boolean ignored = false;
+		if(ignoredList!=null) {
+			for(String dir:ignoredList) {
+				if(subdirectory.getName().matches(dir)) {
+					System.out.println("Ignoring Directory: "+
+									   subdirectory.getAbsolutePath());
+					ignored = true;
+					break;
+				}
+			}
+		}
+		return ignored;
+	}
 }
+
+/**
+   CVS/
+  /home/rsd/projects/scruf/www/CVS/
+ */

@@ -32,7 +32,7 @@ public class WriteFile {
     }
     public void write() {
 	try {
-	    System.out.println("Writing..."+outputFile.getName());
+	    System.out.println("Writing..."+outputFile.getAbsolutePath());
 	    BufferedWriter bwriter = new BufferedWriter
 		(new FileWriter(outputFile));
 	    // write content to file.

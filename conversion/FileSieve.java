@@ -28,9 +28,19 @@ public class FileSieve implements FileFilter {
     // this method return true, if this file doesn't represent
     // a html file.
     public boolean accept(File pathname) {
-	Pattern pattern = Pattern.compile("(.+\\.(html|png|jpg|css|tar|ttf))|(.+?\\~)|(index)|(\\..+)|(\\#.+?\\#)");
+		// check if this is a directory, if yes, accept immediately.
+		if(pathname.isDirectory() && (!pathname.isHidden())) {
+			return true;
+		}
+	Pattern pattern = Pattern.compile(".+?\\.scruffy$");
+	Pattern indexPattern = Pattern.compile("^index\\.scruffy$");
 	Matcher matcher = pattern.matcher(pathname.getName());
+	Matcher indexMatcher =  indexPattern.matcher(pathname.getName());
 	boolean bool = matcher.find();
-	return !bool;
+	if(bool) {
+		// don't 'accept' if the file is 'index.scruffy'.
+		bool = !(indexMatcher.find());
+	}
+	return bool;
     }    
 }
