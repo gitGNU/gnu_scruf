@@ -21,7 +21,7 @@
 
 package scruf.parsers;
 
-import scruf.io.*;
+import scruf.status.*;
 
 public class Header implements Parser {
     

@@ -25,12 +25,15 @@ import scruf.io.*;
 import scruf.parsers.*;
 import java.util.*;
 import java.io.*;
+import scruf.status.*;
 
 public class ConvertFile {
     private List<Parser> parsers;
     private ReadFile readFile;
+	private CreateHtmlFile htmlFile;
     public ConvertFile() {
 		parsers = new ParserList().list();
+		htmlFile = new CreateHtmlFile();
     }
     public void convert(File file) {
 		/**
@@ -47,8 +50,7 @@ public class ConvertFile {
 				
 			}
 		}
-		// Write converted file to respective html file.
-		File outputFile = new File(file.getAbsolutePath()+".html");
-		new WriteFile(outputFile,fileContent).write();
+		// Write to corresponding html file.
+		new WriteFile(htmlFile.create(),fileContent).write();
     }
 }

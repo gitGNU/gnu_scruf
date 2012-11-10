@@ -19,7 +19,7 @@
  */
 
 
-package scruf.io;
+package scruf.status;
 
 import java.io.*;
 

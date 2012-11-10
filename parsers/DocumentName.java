@@ -22,7 +22,7 @@
 package scruf.parsers;
 
 import java.io.*;
-import scruf.io.*;
+import scruf.status.*;
 
 public class DocumentName implements Parser {
     public String parse(String fileContent) {

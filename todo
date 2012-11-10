@@ -1,13 +1,17 @@
-# 'quote' special symbols inside a code-block.
+# modify conversion/CanConvert.java (bug)
 
 # include a link or something to view the 'source'. [working on this one]
 
+# 'quote' special symbols inside a code-block.
+
 # introduce 'meta' info in html doc generated -- authorinfo, date of creation, etc.
-
--- way to ignore directories -- [done]
-
-# extension for scruff marked-up files to make discovery easier.
 
 * introduction to 'scruf' & 'scruffy' mark-up. [working on this one]
 
 # Test it by generating your _full_ homepage using scruf.
+
+[done] way to ignore directories 
+
+[done] move PresentFile.java to status/
+
+[done] extension for scruff marked-up files to make discovery easier.
