@@ -19,33 +19,18 @@
  */
 
 
-package scruf.conversion;
+package scruf.parsers;
 
-import java.io.*;
-import java.util.regex.*;
 import scruf.status.*;
 
-public class CreateHtmlFile {
-	private Pattern pattern = Pattern.compile("(.+?\\.)scruffy");
-	private Matcher matcher;
-	private File htmlFile=null;
-	/** 
-	 *	This method uses PresentFile.file as the 'file' for
-	 *  which a corresponding 'htmlFile' has to be created.
-	 */
-	public File create() {
-		return create(PresentFile.file);
-	}
-	public File create(File file) {
-		htmlFile=null;
-		matcher = pattern.matcher(file.getName());
-		if(matcher.find()) {
-			htmlFile = new File(file.getParentFile(),
-								matcher.group(1)+"html");
-		}else {
-			System.err.println("ERROR: something wrong with scruf: unable to create html file"+
-							   " for "+PresentFile.file.getName());
-		}
-		return htmlFile;
+public class Source implements Parser {
+	private StringBuilder sbuilder;
+	public String parse(String fileContent) {
+		sbuilder = new StringBuilder(fileContent);
+		// append a link to the source.
+		sbuilder.append("\n <div class=\"source\"> \n");
+		sbuilder.append("\n <a href=\"./"+PresentFile.file.getName()+
+						"\">source</a> \n </div>");
+		return sbuilder.toString();
 	}
 }

@@ -25,9 +25,10 @@ import java.io.*;
 
 public class CanConvert {
     private File htmlFile;
+	private CreateHtmlFile createHtml = new CreateHtmlFile();
     private long modified1, modified2;
     public boolean check(File file) {
-	htmlFile = new File(file.getAbsolutePath()+".html");
+		htmlFile =  createHtml.create(file);
 	modified1 = file.lastModified();
 	modified2 = htmlFile.lastModified();
 	if(modified1 > modified2) {
