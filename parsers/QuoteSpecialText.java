@@ -33,10 +33,10 @@ public class QuoteSpecialText implements Parser {
 		qmap.put(">","&gt;");
 	}
 	public String parse(String fileContent) {
-		Pattern pattern = Pattern.compile("(\\&)|(\\<)|(\\>)");
+		Pattern pattern = Pattern.compile("(\\&\\#35\\;)|(\\&)|(\\<)|(\\>)");
 		Matcher matcher = pattern.matcher(fileContent);
 		StringBuffer sbuffer = new StringBuffer();
-		while(matcher.find()) {
+		while(matcher.find() && matcher.group(1)==null) {
 			matcher.appendReplacement(sbuffer,
 									  qmap.get(matcher.group()));
 		}
