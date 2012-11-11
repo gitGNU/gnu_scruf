@@ -1,5 +1,3 @@
-# 'quote' special symbols inside a code-block.
-
 # introduce 'meta' info in html doc generated -- authorinfo, date of creation, etc.
 
 * introduction to 'scruf' & 'scruffy' mark-up. [working on this one]
@@ -15,3 +13,5 @@
 [done] modify conversion/CanConvert.java (bug)
 
 [done] include a link or something to view the 'source'.
+
+[done] 'quote' special symbols inside a code-block.
