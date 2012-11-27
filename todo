@@ -2,11 +2,6 @@ SCRUF - TODO		-*- mode: org; -*-
 
 * features
 
-** 'last update' string
-  the 'last updated' string must be dangled somewhere in the document
-  that is licked by scruf.
-
-
 ** <meta> tags
    introduce 'meta' info in html doc generated -- authorinfo, date of
    creation, etc.
@@ -22,7 +17,6 @@ SCRUF - TODO		-*- mode: org; -*-
    introduction to 'scruf' & 'scruffy' mark-up. [started writing, but
    might not get it done anytime in the near future.]
    
-
 * testing
 
 ** build homepage
@@ -44,3 +38,7 @@ SCRUF - TODO		-*- mode: org; -*-
    include a link or something to view the 'source'.
 
 ** [done] 'quote' special symbols inside a code-block.
+** [done] 'last update' string
+  the 'last updated' string must be dangled somewhere in the document
+  that is licked by scruf.
+
