@@ -1,17 +1,46 @@
-# introduce 'meta' info in html doc generated -- authorinfo, date of creation, etc.
+SCRUF - TODO		-*- mode: org; -*-
 
-* introduction to 'scruf' & 'scruffy' mark-up. [working on this one]
+* features
 
-# Test it by generating your _full_ homepage using scruf.
+** 'last update' string
+  the 'last updated' string must be dangled somewhere in the document
+  that is licked by scruf.
 
-[done] way to ignore directories 
 
-[done] move PresentFile.java to status/
+** <meta> tags
+   introduce 'meta' info in html doc generated -- authorinfo, date of
+   creation, etc.
 
-[done] extension for scruff marked-up files to make discovery easier.
 
-[done] modify conversion/CanConvert.java (bug)
+** implement lists
+   introduce mark-up for lists. Weird that I have not implement
+   yet.
 
-[done] include a link or something to view the 'source'.
 
-[done] 'quote' special symbols inside a code-block.
+** [hp] documentation
+
+   introduction to 'scruf' & 'scruffy' mark-up. [started writing, but
+   might not get it done anytime in the near future.]
+   
+
+* testing
+
+** build homepage
+   Test it by generating your _full_ homepage using scruf.
+
+* finished todos
+  
+** [done] ignore directories
+   way to ignore directories 
+
+** [done] move PresentFile.java to status/
+
+** [done] extension for scruffy files
+   extension for scruff marked-up files to make discovery easier.
+
+** [done] modify conversion/CanConvert.java (bug)
+
+** [done] link to scruffy source
+   include a link or something to view the 'source'.
+
+** [done] 'quote' special symbols inside a code-block.

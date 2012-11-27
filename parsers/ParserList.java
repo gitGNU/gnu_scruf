@@ -38,6 +38,7 @@ public class ParserList {
 	parsers.add(new Images());
 	parsers.add(new Footer());
 	parsers.add(new Paragraphs());
+	parsers.add(new LastUpdate());
 	parsers.add(new Source());
 	parsers.add(new BackButton());
 	parsers.add(new Header());
