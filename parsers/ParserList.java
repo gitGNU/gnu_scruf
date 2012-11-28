@@ -34,14 +34,15 @@ public class ParserList {
 	parsers.add(new DocumentDate());
 	parsers.add(new WordDecoration());
 	parsers.add(new Headings());
-	parsers.add(new Links());
+	parsers.add(new Links());		
 	parsers.add(new Images());
 	parsers.add(new Footer());
 	parsers.add(new Paragraphs());
-	parsers.add(new LastUpdate());
 	parsers.add(new Source());
 	parsers.add(new BackButton());
 	parsers.add(new Header());
+	parsers.add(new LastUpdate());
+	parsers.add(new CloseHtmlTags());
     }
     public List<Parser> list() {
 	return new ArrayList<Parser>(parsers);
