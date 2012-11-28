@@ -2,11 +2,6 @@ SCRUF - TODO		-*- mode: org; -*-
 
 * features
 
-** <meta> tags
-   introduce 'meta' info in html doc generated -- authorinfo, date of
-   creation, etc.
-
-
 ** implement lists
    introduce mark-up for lists. Weird that I have not implement
    yet.
@@ -42,3 +37,7 @@ SCRUF - TODO		-*- mode: org; -*-
   the 'last updated' string must be dangled somewhere in the document
   that is licked by scruf.
 
+** [done] <meta> tags
+   introduce 'meta' info in html doc generated -- authorinfo.
+
+   

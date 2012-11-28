@@ -41,6 +41,8 @@ public class ConvertFile {
 		 * for use outside this method.
 		 */
 		PresentFile.file = file;
+		PresentFile.name = null;
+		PresentFile.author = null;
 		readFile = new ReadFile(file);
 		String fileContent = readFile.getContent();
 		if(!fileContent.equals("")) {
