@@ -48,7 +48,7 @@ public class IndexCreator {
 		String fileName = htmlFile.create().getName();
 	if(shouldAdd(fileName)) {
 	    System.out.println("New Entry: "+fileName);
-	    indexContent.append("[[./");
+	    indexContent.append(" [[./");
 	    indexContent.append(fileName);
 	    indexContent.append("|");
 	    indexContent.append(PresentFile.name);

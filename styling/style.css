@@ -71,7 +71,7 @@ div.code {
     margin-right:auto;
     border:1px;
     padding:5px;
-    width:65%;
+    width:70%;
 }
 
 div.time {
@@ -124,6 +124,30 @@ div.back {
 footer {
     font-size:0.8em;
     font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
+    text-align:center;
+    color:#989898;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px; 
+    padding:5px;
+    width:45%;
+}
+
+div.lastupdate {
+	font-size:0.6em;
+	font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
+    text-align:center;
+    color:#989898;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px; 
+    padding:5px;
+    width:40%;
+}
+
+div.source {
+	font-size:0.4em;
+	font-family:monospace;
     text-align:center;
     color:#989898;
     margin-left:auto;

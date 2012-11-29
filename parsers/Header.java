@@ -37,6 +37,7 @@ public class Header implements Parser {
 	sbuilder.append("<head> \n");
 	sbuilder.append("<meta charset=\"UTF-8\">\n");
 	sbuilder.append(" <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" /> \n");
+	sbuilder.append("<meta name=\"author\" content=\""+PresentFile.author+"\">\n");
 	sbuilder.append("<title>");
 	sbuilder.append(PresentFile.name);
 	sbuilder.append("</title>");
@@ -47,13 +48,6 @@ public class Header implements Parser {
 	// insert File Content.
 	sbuilder.append(fileContent);
 	sbuilder.append("</article>\n");
-	// add "powered by scruf" at bottom of page.
-	sbuilder.append("\n<div class=\"scruf\">\n");
-	sbuilder.append("<a href=\"http://nongnu.org/scruf/\">powered by scruf</a>");
-	sbuilder.append("\n</div>\n");
-	// Close body tag
-	sbuilder.append("\n</body>\n");
-	sbuilder.append("</html>\n");
 	return sbuilder.toString();
     }
 

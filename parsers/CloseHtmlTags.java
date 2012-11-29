@@ -21,19 +21,26 @@
 
 package scruf.parsers;
 
-import java.io.*;
-import scruf.status.*;
+/**
+ * this class, inserts the main content of the html into the <article>
+ * block. 
+ */
 
-public class DocumentName implements Parser {
-    public String parse(String fileContent) {
-		BufferedReader read = 
-			new BufferedReader(new StringReader(fileContent));
-		try {
-			PresentFile.name = read.readLine();
-		}catch(IOException e) {
-			System.err.println("Error reading string "+e);
-		}
-		fileContent = new NullIt().nullIt(fileContent,PresentFile.name);
-		return fileContent;
-    }
+public class CloseHtmlTags implements Parser {
+	private StringBuilder sbuilder;
+	/**
+	 * the fileContent has its <head> and <article> fields filled. 
+	 */
+	public String parse(String fileContent) {
+		sbuilder = new StringBuilder();
+		sbuilder.append(fileContent);
+		// add "powered by scruf" at bottom of page.
+		sbuilder.append("\n<div class=\"scruf\">\n");
+		sbuilder.append("<a href=\"http://nongnu.org/scruf/\">powered by scruf</a>");
+		sbuilder.append("\n</div>\n");
+		// Close body tag
+		sbuilder.append("\n</body>\n");
+		sbuilder.append("</html>\n");
+		return sbuilder.toString();
+	}
 }
