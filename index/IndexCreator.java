@@ -52,7 +52,7 @@ public class IndexCreator {
 	    indexContent.append(fileName);
 	    indexContent.append("|");
 	    indexContent.append(PresentFile.name);
-	    indexContent.append("]]\n");
+	    indexContent.append("]]  \n");
 	    modified=true;
 	}
     }
