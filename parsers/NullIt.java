@@ -25,12 +25,14 @@ import java.util.regex.*;
 
 public class NullIt {
     public String nullIt(String content,String regex) {
-	Pattern pattern = Pattern.compile(regex);
-	Matcher matcher = pattern.matcher(content);
-	while(matcher.find()) {
-	    content = matcher.replaceFirst("");
-	    break;
-	}
-	return content;
+		// quote the regex.
+		String quotedRegex = "\\Q"+regex+"\\E";
+		Pattern pattern = Pattern.compile(quotedRegex);
+		Matcher matcher = pattern.matcher(content);
+		while(matcher.find()) {
+			content = matcher.replaceFirst("");
+			break;
+		}
+		return content;
     }
 }
