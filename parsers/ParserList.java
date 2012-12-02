@@ -36,6 +36,7 @@ public class ParserList {
 	parsers.add(new Headings());
 	parsers.add(new Links());		
 	parsers.add(new Images());
+	parsers.add(new Audio());
 	parsers.add(new Footer());
 	parsers.add(new Paragraphs());
 	parsers.add(new Source());
