@@ -23,16 +23,30 @@ package scruf.parsers;
 
 import java.util.regex.*;
 
-public class NullIt {
-    public String nullIt(String content,String regex) {
-		// quote the regex.
-		String quotedRegex = "\\Q"+regex+"\\E";
-		Pattern pattern = Pattern.compile(quotedRegex);
-		Matcher matcher = pattern.matcher(content);
+public class Audio implements Parser {
+	private Pattern pattern;
+	private Matcher matcher;
+	private StringBuffer sbuffer;
+	private String replacement;
+	public Audio() {
+		pattern = Pattern.compile("\\{\\{audio\\:(.+?\\.(ogg|ogv))\\}\\}", 
+								  Pattern.DOTALL);
+		replacement = "<audio controls=\"controls\">"+ 
+			"\n<source src=\"$1\" type=\"audio/ogg\">"+
+			"\n<p>[ No support for HTML5 audio tag for Ogg audio."+ 
+			"<a  href=\"$1\"> Download it</a>. ]</p>"+ 
+			"</audio>";
+		sbuffer = new StringBuffer();
+	}
+	public String parse(String fileContent) {
+		matcher = pattern.matcher(fileContent);
+		// clear the buffer
+		sbuffer.delete(0,sbuffer.length());
 		while(matcher.find()) {
-			content = matcher.replaceFirst("");
-			break;
+			matcher.appendReplacement(sbuffer,replacement);
 		}
-		return content;
-    }
+		matcher.appendTail(sbuffer);
+		
+		return sbuffer.toString();
+	}
 }
