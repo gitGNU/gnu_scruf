@@ -2,15 +2,43 @@ SCRUF - TODO		-*- mode: org; -*-
 
 * features
 
+** build system (GNU auto tools)
+
+** test suite 
+
 ** implement lists
    introduce mark-up for lists. Weird that I have not implement
    yet.
-
 
 ** [hp] documentation
 
    introduction to 'scruf' & 'scruffy' mark-up. [started writing, but
    might not get it done anytime in the near future.]
+   
+
+* distribution related
+
+** README file
+   a brief description of the project; pointer to website; notes on
+   the platform; a roadmap to important files; pointer to INSTALL
+   file; pointer to AUTHORS file; project news 
+** INSTALL file
+   contain installation instruction.
+** AUTHORS file
+** HISTORY file
+   this might is not needed at present.
+** FAQ file
+   this might is not needed at present.
+** checksum
+   md5sum.
+** manual
+   the manual file should also be part of the source distribution.
+
+* website
+
+** mailing list
+
+** links to related projects
    
 * testing
 
