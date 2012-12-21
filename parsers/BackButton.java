@@ -29,14 +29,15 @@ public class BackButton implements Parser {
     // this method doesn't modify the filContent.
     public String parse(String fileContent) {
 		StringBuilder fileBuilder = new StringBuilder(fileContent);
+		String fileName = PresentFile.file.getName();
 		/**
 		 * Back button is added only if the present directory being
 		 * parsed is not 'root'.
 		 */
-		if(DirectoryInfo.level!=0) {
+		if(DirectoryInfo.level!=0 || !(fileName.equals("index.scruffy"))) {
 			fileBuilder.append("\n<div class=\"back\">\n");
 			fileBuilder.append("<a href=\"");
-			if(PresentFile.file.getName().equals("index.scruffy")) {
+			if(fileName.equals("index.scruffy")) {
 				fileBuilder.append("../\"> back ");
 			}else {
 				fileBuilder.append("./\"> back ");

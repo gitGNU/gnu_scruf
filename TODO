@@ -1,0 +1,74 @@
+SCRUF - TODO		-*- mode: org; -*-
+
+* features
+
+** build system (GNU auto tools)
+
+** test suite 
+
+** implement lists
+   introduce mark-up for lists. Weird that I have not implement
+   yet.
+
+** [hp] documentation
+
+   introduction to 'scruf' & 'scruffy' mark-up. finished the initial
+   draft. It need to be edited and fine tuned.
+
+** mark-up to center align text
+
+* distribution related
+
+** README file
+   a brief description of the project; pointer to website; notes on
+   the platform; a roadmap to important files; pointer to INSTALL
+   file; pointer to AUTHORS file; project NEWS.
+** INSTALL file
+   point to the manual where installation instruction can be found.
+** AUTHORS file
+** NEWS file
+   should contain information about new releases and features(if
+   needed).
+** HISTORY file
+   not required for 0.1.0 release.
+** FAQ file
+   not required for 0.1.0 release.
+** checksum
+   md5sum.
+** manual
+   the manual file should also be part of the source distribution.
+
+** package & upload it in savannah
+
+* website
+  
+** create a documentation section in the homepage.
+   
+** create a mailing list section in the homepage
+
+* finished todos
+  
+** [done] ignore directories
+   way to ignore directories 
+
+** [done] move PresentFile.java to status/
+
+** [done] extension for scruffy files
+   extension for scruff marked-up files to make discovery easier.
+
+** [done] modify conversion/CanConvert.java (bug)
+
+** [done] link to scruffy source
+   include a link or something to view the 'source'.
+
+** [done] 'quote' special symbols inside a code-block.
+** [done] 'last update' string
+  the 'last updated' string must be dangled somewhere in the document
+  that is licked by scruf.
+
+** [done] <meta> tags
+   introduce 'meta' info in html doc generated -- authorinfo.
+
+** [done] mailing list
+** [done] build rsiddharth's weblog
+   Test it by generating rsiddharth's weblog using scruf.

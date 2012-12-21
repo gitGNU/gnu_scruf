@@ -28,13 +28,14 @@ import scruf.io.*;
 
 public class WordDecoration implements Parser {
     private HashMap<String, String> tagMap;
+	private SymbolMap symbolMap;
     public WordDecoration() {
 	tagMap = new HashMap<String, String>();
 	tagMap.put("''","<i>$7</i>");
 	tagMap.put("__","<u>$7</u>");
 	tagMap.put("'''","<b>$7</b>");
 	tagMap.put("%%%","<blockquote>$7</blockquote>");
-	tagMap.put("`","<span class=\"monospace\">$7</span>");
+	symbolMap = new SymbolMap();
     }
     public String parse(String fileContent) {
 	Pattern pattern = 
@@ -44,10 +45,35 @@ public class WordDecoration implements Parser {
 	StringBuffer sbuffer = new StringBuffer();
 	String replacement;
 	while(matcher.find()) {
-	    replacement = tagMap.get(matcher.group(1));
+		// if the block found is a monospace block,
+		// get the replacement from 'monospaceBlock'
+		// method, else get it from the 'tagMap':
+		if(matcher.group(6)!=null) {
+			// group 7 is the string inside the word decorated
+			// mark up. (see the pattern above)
+			replacement = monospaceBlock(matcher.group(7));
+		}else {
+			replacement = tagMap.get(matcher.group(1));
+		}
 	    matcher.appendReplacement(sbuffer,replacement);
 	}
 	matcher.appendTail(sbuffer);
 	return sbuffer.toString();
     }
+
+	// monopace blocks need special treatment, therefore,
+	// this method for its construction:
+	private String monospaceBlock(String content) {
+		// quote all special characters in the monospace
+		// block:
+		String quotedContent=  symbolMap.quote(content);
+
+		// build monospace HTML block:
+		StringBuilder sb = new StringBuilder();
+		sb.append("<span class=\"monospace\">");
+		sb.append(quotedContent);
+		sb.append("</span>");
+
+		return sb.toString();
+	}
 }

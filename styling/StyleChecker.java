@@ -23,18 +23,22 @@ package scruf.styling;
 
 import scruf.io.*;
 import java.io.*;
+
 public class StyleChecker {
     private File styleSheet;
     private File curDir;
     private String styleContent;
-
-    public void resolve(File curDir) {
+	// the default style sheet in scruf package.
+	private File scrufStyleSheet = new File("scruf/styling/style.css");
+    public void check(File curDir) {
 	this.curDir = curDir.getAbsoluteFile();
 	styleSheet = new File(curDir,"style.css");
-	// if style shee doesn't exists, copy default sheet
-	// to the directory.
-	if(!styleSheet.exists()) {
-	    styleContent = new ReadFile(new File("scruf/styling/style.css")).getContent();
+	// if style sheet doesn't exists or if the default style is newer
+	// than style sheet in the directory, copy default sheet to the
+	// directory.
+	if((!styleSheet.exists()) ||
+	   scrufStyleSheet.lastModified() > styleSheet.lastModified()) {
+	    styleContent = new ReadFile(scrufStyleSheet).getContent();
 	    new WriteFile(styleSheet,styleContent).write();	    
 	}
     }
