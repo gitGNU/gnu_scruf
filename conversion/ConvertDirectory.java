@@ -25,14 +25,18 @@ import java.io.*;
 import scruf.index.*;
 import scruf.status.*;
 import scruf.conversion.ignore.*;
+import scruf.styling.*;
 
 public class ConvertDirectory {
     private ConvertFile html;
     private CanConvert canConvert;
     private boolean can;
+	private StyleChecker styleSheet;
+	private boolean styleFlag;
     public ConvertDirectory() {
-	html = new ConvertFile();
-	canConvert = new CanConvert();
+		html = new ConvertFile();
+		canConvert = new CanConvert();
+		styleSheet = new StyleChecker();
     }
     public void convert(File directory) {
 	if(!directory.isDirectory()) {
@@ -47,14 +51,18 @@ public class ConvertDirectory {
 	IndexCreator index = new IndexCreator(directory);
 	// iterate through the directory.
 	System.out.println("Current Directory: "+directory.getAbsolutePath());
+	// reset styleFlag.
+	styleFlag = false;
 	for(File file:directory.listFiles(new FileSieve())) {
 	    if(file.isFile()) {
-		can = canConvert.check(file);
-		if(can) {
-		    System.out.println("Converting..."+file.getAbsolutePath());
-		    html.convert(file);
-		    index.add(file);
-		}
+			can = canConvert.check(file);
+			if(can) {
+				System.out.println("Converting..."+file.getAbsolutePath());
+				html.convert(file);
+				index.add(file);
+				// set styleFlag.
+				styleFlag = true;
+			}
 	    }
 	    else if(file.isDirectory()) {
 			// Perform conversion, only if, directory
@@ -64,6 +72,11 @@ public class ConvertDirectory {
 				this.convert(file);
 			}
 	    }
+	}
+	// if styleFlag is set, check for style sheet in
+	// in the directory.
+	if(styleFlag) {
+		styleSheet.resolve(directory);
 	}
 	boolean convertIndex = (index.shouldConvert() || 
 							canConvert.check(index.indexFile()));
