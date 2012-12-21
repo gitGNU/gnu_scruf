@@ -27,8 +27,7 @@ SCRUF - TODO		-*- mode: org; -*-
    point to the manual where installation instruction can be found.
 ** AUTHORS file
 ** NEWS file
-   should contain information about new releases and features(if
-   needed).
+   not required for 0.1.0 release.
 ** HISTORY file
    not required for 0.1.0 release.
 ** FAQ file
