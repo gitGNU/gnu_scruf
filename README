@@ -1,0 +1,102 @@
+scruf 
+=====
+
+scruf is a simple program that converts markedup files to
+corresponding valid HTML5 files.
+
+The markup that is understood by scruf is called the "scruffy"
+markup. To learn about the scruffy markup look at
+manual/scruffy-markup.html file.
+
+To get the up to date information about scruf, visit its homepage[1].
+
+[1]: http://nongnu.org/scruf/
+
+License
+=======
+
+scruf is free software[2] and it is licensed and the GNU General Public
+License version 3 or later.
+
+The COPYING file contains the full text of the GNU General Public
+License version 3.
+
+[2]: http://www.gnu.org/philosophy/free-sw.html
+
+Platform
+========
+
+At present scruf can be used in GNU/Linux based operating
+sytems. Since scruf is written in Java, it might work on other
+platforms like Windows, Mac, etc. 
+
+scruf was not test in platforms other than GNU/Linux, so it might not
+work as it should in platforms other than GNU/Linux, even if it
+compiles successfully.
+
+Dependencies
+============
+
+To compile and run scruf, the OpenJDK[3] is need. Instructions are
+provided in manual/scruf-howto.html on how to install the JDK.
+
+[3]: http://openjdk.java.net
+
+
+Installation
+============
+
+The source has to be compiled with the `javac' command, with that, the
+installation is done. For instruction on compiling the scruf source,
+see manual/scruf-howto.html.
+
+
+Mailing List
+============
+
+All public discussion regarding the scruf project happens in the
+scruf-friends[4] maling list.
+
+If you want help or have issues using scruf or wish to contribute to
+the scruf project or desire to give vent to your thoughts about scruf,
+the scruf-friends[4] list is the right place.
+
+[4]: https://lists.nongnu.org/mailman/listinfo/scruf-friends
+
+Report a Bug
+============
+
+Found scruf has gone bonkers or it is not working the way it has to?
+Just file a bug report[5] about it. Please also provide your contact
+information if it is required.
+
+[5]: http://savannah.nongnu.org/bugs/?group=scruf&func=additem
+
+Overview of the scruf source
+============================
+
+This section is for folks who wish to read/explore/hack/study/etc the
+source code.
+
+* Run.java file:  
+
+* parser/ directory:
+
+* conversion/ directory:
+
+* index/ directory:
+
+* io/ directory:
+
+* status/ directory:
+
+* styling/ directory:
+
+* docs/ directory:
+
+==========
+Author
+==========
+
+The scruf package is authored & maintained by rsiddharth
+<rsiddharth@ninthfloor.org>.

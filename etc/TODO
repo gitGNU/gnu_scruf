@@ -23,9 +23,9 @@ SCRUF - TODO		-*- mode: org; -*-
    a brief description of the project; pointer to website; notes on
    the platform; a roadmap to important files; pointer to INSTALL
    file; pointer to AUTHORS file; project NEWS.
-** INSTALL file
-   point to the manual where installation instruction can be found.
 ** AUTHORS file
+   not required at the moment. Author name can be mention in the
+   README file.
 ** NEWS file
    should contain information about new releases and features(if
    needed).
@@ -37,7 +37,6 @@ SCRUF - TODO		-*- mode: org; -*-
    md5sum.
 ** manual
    the manual file should also be part of the source distribution.
-
 ** package & upload it in savannah
 
 * website
