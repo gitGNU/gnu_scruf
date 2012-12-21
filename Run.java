@@ -19,27 +19,31 @@
  */
 
 
-package scruf.styling;
+package scruf;
 
-import scruf.io.*;
 import java.io.*;
+import scruf.io.*;
+import scruf.conversion.*;
+import scruf.styling.*;
+import scruf.status.*;
+import scruf.index.*;
 
-public class StyleChecker {
-    private File styleSheet;
-    private File curDir;
-    private String styleContent;
-	// the default style sheet in scruf package.
-	private File scrufStyleSheet = new File("scruf/styling/style.css");
-    public void check(File curDir) {
-	this.curDir = curDir.getAbsoluteFile();
-	styleSheet = new File(curDir,"style.css");
-	// if style sheet doesn't exists or if the default style is newer
-	// than style sheet in the directory, copy default sheet to the
-	// directory.
-	if((!styleSheet.exists()) ||
-	   scrufStyleSheet.lastModified() > styleSheet.lastModified()) {
-	    styleContent = new ReadFile(scrufStyleSheet).getContent();
-	    new WriteFile(styleSheet,styleContent).write();	    
+public class Run {
+    public static void main(String[] args) {
+	Initialization init = new Initialization(args);
+	File list = init.getListFile();
+	ReadFile readList = new ReadFile(list);
+	String dirs[] = readList.split("\n");
+	File directory;
+	ConvertDirectory html = new ConvertDirectory();
+	for(String dir:dirs) {
+	    // if empty string, do nothing.
+	    if(dir.length()==0) {
+		continue;
+	    }
+	    directory = new File(dir).getAbsoluteFile();
+		DirectoryInfo.level=0;
+	    html.convert(directory);
 	}
     }
 }
