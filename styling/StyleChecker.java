@@ -28,7 +28,7 @@ public class StyleChecker {
     private File curDir;
     private String styleContent;
 
-    public void resolve(File curDir) {
+    public void check(File curDir) {
 	this.curDir = curDir.getAbsoluteFile();
 	styleSheet = new File(curDir,"style.css");
 	// if style shee doesn't exists, copy default sheet

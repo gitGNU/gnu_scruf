@@ -76,7 +76,7 @@ public class ConvertDirectory {
 	// if styleFlag is set, check for style sheet in
 	// in the directory.
 	if(styleFlag) {
-		styleSheet.resolve(directory);
+		styleSheet.check(directory);
 	}
 	boolean convertIndex = (index.shouldConvert() || 
 							canConvert.check(index.indexFile()));
