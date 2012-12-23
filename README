@@ -1,7 +1,7 @@
 scruf 
 =====
 
-scruf is a simple program that converts markedup files to
+scruf is a simple program that converts marked up files to
 corresponding valid HTML5 files.
 
 The markup that is understood by scruf is called the "scruffy"
@@ -15,20 +15,23 @@ To get the up to date information about scruf, visit its homepage[1].
 License
 =======
 
-scruf is free software[2] and it is licensed and the GNU General Public
-License version 3 or later.
+scruf is free software[2] and it is licensed under the GNU General
+Public License version 3 or later.
 
 The COPYING file contains the full text of the GNU General Public
 License version 3.
 
 [2]: http://www.gnu.org/philosophy/free-sw.html
 
+The style sheet, style.css, in styling/ is dedicated to the public
+domain.
+
 Platform
 ========
 
 At present scruf can be used in GNU/Linux based operating
-sytems. Since scruf is written in Java, it might work on other
-platforms like Windows, Mac, etc. 
+systems. Since scruf is written in Java, it might work on other
+platforms like Windows, Mac, etc.
 
 scruf was not test in platforms other than GNU/Linux, so it might not
 work as it should in platforms other than GNU/Linux, even if it
@@ -42,7 +45,6 @@ provided in manual/scruf-howto.html on how to install the JDK.
 
 [3]: http://openjdk.java.net
 
-
 Installation
 ============
 
@@ -50,12 +52,77 @@ The source has to be compiled with the `javac' command, with that, the
 installation is done. For instruction on compiling the scruf source,
 see manual/scruf-howto.html.
 
+Overview of the scruf source
+============================
+
+This section is for folks who wish to read/explore/hack/study/etc the
+source code.
+
+* Run.java : This is entry point for scruf. It contains the `main'
+  function starts the nuts & bolts of scruf.
+
+* parser/ : This directory contains all the `Parsers' and
+  related classes. 
+  
+  The 'Parser' interface is defined in Parser.java and all parsers
+  implement this interface. 
+
+  The functionality of a Parser is to convert a specific scruffy
+  markup into corresponding HTML5 element. For instance, the `Link'
+  parser converts scruffy marked up links into corresponding HTML5
+  links; The `CodeBlocks' parsers looks for code blocks in the marked up
+  file and converts the block into a HTML5 code block. 
+
+  `ParserList' class contains a list of all parsers that is used to
+  convert a scruffy markup file to valid HTML5.
+
+* conversion/ : Contains classes responsible for traversing
+  directories looking for scruffy marked up files & feeding the marked
+  up files to a list of parsers to convert into HTML5
+
+  `ConvertDirectory' class recursively traverses a directories & when
+  it finds a scruffy marked up file, it gives it to the `ConvertFile'
+  class to perform HTML5 conversion.
+
+  `ConvertFile' gets a scruffy marked up file and feeds the file to a
+  list of parsers to convert to HTML5 and writes the converted HTML5
+  file to the disk.
+
+  	+ ignore/ : This directory contains a class which help identify
+  	sub-directories that are to be ignored.
+
+* index/ : Contains the `IndexCreator' class which adds links to newly
+  converted HTML5 files to the directory's `index.scruffy' file
+
+  `index.scruffy' is created in directories that have scruffy marked
+  up files and it contains a list of links to all the HTML5 files
+  converted by scruf.
+
+* io/ : Contains classes for reading/writing files.
+
+* status/ : Contains the `PresentFile' class which has the details
+  about the marked up file that is being converted to HTML5.
+
+  The `DirectoryInfo' class has the `level' of the directory being
+  traversed with respect to the `root' directory.
+
+  The `root' directory is the top level directory given by the user to
+  perform HTML5 conversion.
+
+* styling/ : This directory contains the StyleChecker class which
+  makes sure that every directory, that has a scruffy marked up file,
+  contains a dedicated style sheet -- style.css.
+
+  The style.css is the default style sheet used by scruf.
+
+* docs/ directory: Contains documentation on how to install and use
+  scruf.
 
 Mailing List
 ============
 
 All public discussion regarding the scruf project happens in the
-scruf-friends[4] maling list.
+scruf-friends[4] mailing list.
 
 If you want help or have issues using scruf or wish to contribute to
 the scruf project or desire to give vent to your thoughts about scruf,
@@ -72,31 +139,8 @@ information if it is required.
 
 [5]: http://savannah.nongnu.org/bugs/?group=scruf&func=additem
 
-Overview of the scruf source
-============================
-
-This section is for folks who wish to read/explore/hack/study/etc the
-source code.
-
-* Run.java file:  
-
-* parser/ directory:
-
-* conversion/ directory:
-
-* index/ directory:
-
-* io/ directory:
-
-* status/ directory:
-
-* styling/ directory:
-
-* docs/ directory:
-
-==========
 Author
-==========
+======
 
-The scruf package is authored & maintained by rsiddharth
+scruf is authored & maintained by rsiddharth
 <rsiddharth@ninthfloor.org>.

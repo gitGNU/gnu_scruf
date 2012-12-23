@@ -21,11 +21,9 @@ SCRUF - TODO		-*- mode: org; -*-
 
 ** README file
    a brief description of the project; pointer to website; notes on
-   the platform; a roadmap to important files; pointer to INSTALL
-   file; pointer to AUTHORS file; project NEWS.
-** AUTHORS file
-   not required at the moment. Author name can be mention in the
-   README file.
+   the platform; a roadmap to important files; installation info
+   file; info about author; 
+
 ** NEWS file
    should contain information about new releases and features(if
    needed).
@@ -34,13 +32,11 @@ SCRUF - TODO		-*- mode: org; -*-
 ** FAQ file
    not required for 0.1.0 release.
 ** checksum
-   md5sum.
-** manual
-   the manual file should also be part of the source distribution.
-** package & upload it in savannah
-
+*** read the gpg handbook and get yourself the gpg thingy.
+*** sign package. 
+** package & upload it to savannah
+   
 * website
-  
 ** create a documentation section in the homepage.
    
 ** create a mailing list section in the homepage
@@ -71,3 +67,9 @@ SCRUF - TODO		-*- mode: org; -*-
 ** [done] mailing list
 ** [done] build rsiddharth's weblog
    Test it by generating rsiddharth's weblog using scruf.
+** [done] manual
+   the manual file should also be part of the source distribution.
+** [done] README file
+   a brief description of the project; pointer to website; notes on
+   the platform; a roadmap to important files; installation info
+   file; info about author; 
