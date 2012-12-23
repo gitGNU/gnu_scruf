@@ -10,11 +10,6 @@ SCRUF - TODO		-*- mode: org; -*-
    introduce mark-up for lists. Weird that I have not implement
    yet.
 
-** [hp] documentation
-
-   introduction to 'scruf' & 'scruffy' mark-up. finished the initial
-   draft. It need to be edited and fine tuned.
-
 ** mark-up to center align text
 
 * distribution related
@@ -68,5 +63,8 @@ SCRUF - TODO		-*- mode: org; -*-
 ** [done] create a documentation section in the homepage.
    
 ** [done] create a mailing list section in the homepage
+** [hp] documentation
 
-   
+   introduction to 'scruf' & 'scruffy' mark-up. finished the initial
+   draft. It need to be edited and fine tuned.
+
