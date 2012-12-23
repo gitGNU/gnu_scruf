@@ -32,7 +32,6 @@ public class ConvertDirectory {
     private CanConvert canConvert;
     private boolean can;
 	private StyleChecker styleSheet;
-	private boolean styleFlag;
     public ConvertDirectory() {
 		html = new ConvertFile();
 		canConvert = new CanConvert();
@@ -51,8 +50,6 @@ public class ConvertDirectory {
 	IndexCreator index = new IndexCreator(directory);
 	// iterate through the directory.
 	System.out.println("Current Directory: "+directory.getAbsolutePath());
-	// reset styleFlag.
-	styleFlag = false;
 	for(File file:directory.listFiles(new FileSieve())) {
 	    if(file.isFile()) {
 			can = canConvert.check(file);
@@ -60,8 +57,9 @@ public class ConvertDirectory {
 				System.out.println("Converting..."+file.getAbsolutePath());
 				html.convert(file);
 				index.add(file);
-				// set styleFlag.
-				styleFlag = true;
+				// check for style sheet in the directory; create/update
+				// if needed.
+				styleSheet.check(directory);
 			}
 	    }
 	    else if(file.isDirectory()) {
@@ -72,11 +70,6 @@ public class ConvertDirectory {
 				this.convert(file);
 			}
 	    }
-	}
-	// if styleFlag is set, check for style sheet in
-	// in the directory.
-	if(styleFlag) {
-		styleSheet.check(directory);
 	}
 	boolean convertIndex = (index.shouldConvert() || 
 							canConvert.check(index.indexFile()));
