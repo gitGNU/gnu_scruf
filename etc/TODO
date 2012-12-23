@@ -32,10 +32,6 @@ SCRUF - TODO		-*- mode: org; -*-
 ** package & upload it to savannah
    
 * website
-** create a documentation section in the homepage.
-   
-** create a mailing list section in the homepage
-
 * finished todos
   
 ** [done] ignore directories
@@ -68,3 +64,9 @@ SCRUF - TODO		-*- mode: org; -*-
    a brief description of the project; pointer to website; notes on
    the platform; a roadmap to important files; installation info
    file; info about author; 
+
+** [done] create a documentation section in the homepage.
+   
+** [done] create a mailing list section in the homepage
+
+   
