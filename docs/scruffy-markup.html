@@ -1,0 +1,298 @@
+<!DOCTYPE html> 
+<head> 
+<meta charset="UTF-8">
+ <link rel="stylesheet" type="text/css" href="style.css" /> 
+<meta name="author" content=" rsiddharth">
+<title> the scruffy markup</title></head> 
+<body> 
+<article>
+
+
+
+<h1> the scruffy markup </h1>
+
+<p>
+ <i>scruffy</i> is the markup that is understood by scruf. 
+</p>
+
+<p>
+All <i>scruffy</i> marked up documents must have a <span class="monospace">&#46;scruffy</span> extension
+-- that is how scruf comes to know that a particular file is, indeed,
+a <i>scruffy</i> document.
+</p>
+
+<p>
+The following sections will get you acquainted with the <i>scruffy</i>
+markup.
+</p>
+
+<h2> meta things </h2>
+
+<p>
+First things first. At the beginning of the <i>scruffy</i> document, it
+is required to specify some <span class="monospace">meta</span> things -- the document title &amp; the
+author of the document.
+</p>
+
+<p>
+This is how it is done.
+</p>
+
+<div class="code"><br />meta&#45;title&#58; Title of Your Document<br />meta&#45;author&#58; Author<br /></div>
+
+<h2> document date </h2>
+
+<p>
+To specify the date of creation of the document, surround the date
+with a pair of <span class="monospace">&#36;&#36;&#36;</span>.
+</p>
+
+<div class="code"><br />&#36;&#36;&#36; 1 January&#44; 1984 &#36;&#36;&#36;<br /></div>
+
+<p>
+It can be made verbose too.
+</p>
+
+<div class="code"><br />&#36;&#36;&#36; Posted on 1 January&#44; 1984 &#36;&#36;&#36;<br /></div>
+
+
+<h2> headings </h2>
+
+<p>
+The mark-up for specifying the heading is the clumsiest of all. Now is
+the time to hate <i>scruffy</i> for what it is.
+</p>
+
+<p>
+To specify a &lt;h1&gt; heading, surround the <i>heading string</i> with a pair
+of <span class="monospace">10</span> equals sign(<span class="monospace">&#61;</span>). 
+</p>
+
+<div class="code"><br />&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;<br />Heading 1<br />&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;<br /></div>
+
+<p>
+For a &lt;h2&gt; heading, the <i>heading string</i> is surrounded by a pair of
+<span class="monospace">20</span> equals sign. 
+</p>
+
+<div class="code"><br />&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;<br />Heading 2<br />&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;<br /></div>
+
+<p>
+So the math is: 
+</p>
+
+<div class="code"><br />no of equals signs &#61; &#40;&#40;heading size&#41; &#42; 10&#41;<br /></div>
+
+<p>
+For &lt;h3&gt; (head size is 3), the number of equals signs is equal to
+30. Therefore, a to get a &lt;h3&gt; heading, the <i>heading string</i> should
+be surrounded by a pair of <span class="monospace">30</span> equals signs.
+</p>
+
+<h2> paragraphs </h2>
+
+<p>
+Paragraphs are delimited by a blank line.
+</p>
+
+<div class="code"><br />foo is good at drinking&#46;<br /><br />bar loves to hack code&#46;<br /></div>
+
+<p>
+The above two lines are converted to:
+</p>
+
+<div class="code"><br />&lt;p&gt; foo is good at drinking&#46;&lt;&#47;p&gt;<br /><br />&lt;p&gt; bar loves to hack code&#46;&lt;&#47;p&gt;<br /></div>
+
+<h2> word decoration </h2>
+
+<p>
+ <b>Bold</b> text is surrounded by three singles quotes(<span class="monospace">&#39;&#39;&#39;</span>).
+</p>
+
+<div class="code"><br />&#39;&#39;&#39;This text will be in bold&#39;&#39;&#39;  <br /></div>
+
+
+<p>
+ <i>Italic</i> text is surrounded by two single quotes(<span class="monospace">&#39;&#39;</span>).
+</p>
+
+<div class="code"><br />&#39;&#39;This text will be italicized&#39;&#39;<br /></div>
+
+<p>
+ <u>Underlined</u> text is surrounded by two underscores (<span class="monospace">&#95;&#95;</span>).
+</p>
+
+<div class="code"><br /> &#95;&#95;This text will be underlined&#95;&#95;<br /></div>
+
+<p>
+Text may be <span class="monospace">monopspaced</span> too, it is done by surrounding the text with
+<span class="monospace">&#96;</span> symbol.
+</p>
+
+<div class="code"><br /> &#96;monospaced text&#96; <br /></div>
+
+<p>
+If the beginning of the text, in a paragraph, is decorated,
+then, please remember to <i>leave a space before starting the
+paragraph</i>.
+</p>
+
+<div class="code"><br /> &#39;&#39;This paragraph is&#39;&#39; decorated at the beginning with italics&#44; <br />so&#44; a space is left before starting the paragraph&#46;<br /></div>
+
+<h2> code blocks </h2>
+
+<p>
+When it is desired to illustrate code or show verbatim text, the text
+or code is put around a pair of  <span class="monospace">&#35;&#35;&#35;</span>.
+</p>
+
+<div class="code"><br /> &#35;&#35;&#35;<br /><br />  &#35;include &lt;beer&#46;h&gt;<br /><br />  void main&#40;&#41; &#123;<br />   beer lager&#59;<br />   lager&#46;drink&#40;&#41;&#59;<br />   return&#59;<br />  &#125;<br /><br /> &#35;&#35;&#35;<br /></div>
+
+<p>
+Text inside code blocks <u>cannot</u> be marked up, as all special
+characters are converted into their corresponding HTML number inside a
+code block.
+</p>
+
+<p>
+All through this document, those grayscaled blocks of text are,
+indeed, code blocks. 
+</p>
+
+<h2> block quote </h2>
+
+<p>
+A block of text is <i>blockquoted</i> when it is surrounded by <span class="monospace">&#37;&#37;&#37;</span>
+string.
+</p>
+
+<div class="code"><br />&#37;&#37;&#37;<br /><br />The is phrase is fain to be blockquoted by scruf&#46; <br /><br />&#37;&#37;&#37;<br /></div>
+
+<h2> links </h2>
+
+<p>
+The markup for links is very similar to
+<a href="http://moinmo.in/HelpOnMoinWikiSyntax#Hyperlinks">MoinMoin's markup
+for links</a>:
+</p>
+
+<div class="code"><br /> &#91;&#91;http&#58;&#47;&#47;en&#46;wikipedia&#46;org&#47;wiki&#47;Special&#58;Random&#124;Wikipedia Random Article&#93;&#93;<br /></div>
+
+<p>
+As seen above, the <i>link block</i> is surround by <span class="monospace">&#91;&#91;</span> &amp; <span class="monospace">&#93;&#93;</span>. The
+first part inside the link block is the <i>link</i> and the second part
+(which is optional) is a description of the link. The two parts of the
+<i>link block</i> is separated by a <span class="monospace">&#124;</span> (pipe) symbol.
+</p>
+
+<p>
+The pipe symbol (<span class="monospace">&#124;</span>) is eliminated from the <i>link block</i>, if the
+link description is not specified.
+</p>
+
+<p>
+The HTML form of the above <i>link block</i> will look like:
+</p>
+
+<div class="code"><br />&lt;a href&#61;&#34;http&#58;&#47;&#47;en&#46;wikipedia&#46;org&#47;wiki&#47;Special&#58;Random&#34;&gt; Wikipedia Random Article &lt;&#47;a&gt;<br /></div>
+
+<h2> images </h2>
+
+<p>
+The markup for the <i>image block</i> looks like this:
+</p>
+
+<div class="code"><br />&#123;&#123;&#47;path&#47;to&#47;the&#47;image&#46;jpg&#124;description of the image&#125;&#125;<br /></div>
+
+<p>
+As seen above, the <i>image block</i> is enclosed with <span class="monospace">&#123;&#123;</span> &amp; <span class="monospace">&#125;&#125;</span>. The
+first part of the <i>image block</i> is the path to the location where
+the image stored. The second part (which is optional) is a textual
+description of the image. The textual description is what that is
+shown when the image cannot be displayed in the browser(text-only
+browsers, for instance).
+</p>
+
+<p>
+The two parts of the <i>image block</i> is separated by the <span class="monospace">&#124;</span> (pipe)
+symbol. The pipe symbol is eliminated, if the textual description of
+the image is not specified.
+</p>
+
+<h2> audio </h2>
+
+<p>
+scruf uses HTML5 &lt;audio&gt; tag to embed audio. 
+</p>
+
+<p>
+The markup for embedding audio:
+</p>
+
+<div class="code"><br />&#123;&#123;audio&#58;&#47;path&#47;to&#47;the&#47;audio&#46;ogg&#125;&#125;<br /></div>
+
+<p>
+As seen above, the <i>audio block</i> is enclosed with <span class="monospace">&#123;&#123;</span> &amp;
+<span class="monospace">&#125;&#125;</span>. Inside the braces, the <i>audio block</i> starts with <span class="monospace">audio&#58;</span>
+followed by the path to the audio file.
+</p>
+
+<p>
+At present, there is support for only Ogg Vorbis audio. 
+</p>
+
+<h2> footer </h2>
+
+<p>
+The author's name and copyright information may be placed inside the
+<i>footer block</i>. This block, as the name implies, is put at the end
+of the document.
+</p>
+
+<div class="code"><br />&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;<br />written by Audacius Scrooge&#46; It is licensed under CC&#45;BY&#45;SA<br />&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;<br /></div>
+
+<p>
+The <i>footer block</i> is enclosed by a pair of seventy hyphens
+(<span class="monospace">&#45;</span>). 
+</p>
+
+<p>
+In Emacs, the whopping seventy hyphens can be generated with a <span class="monospace">C&#45;u 70
+&#45;</span>.
+</p>
+
+<h2> have problems? </h2>
+
+<p>
+If there are/is any issue(s) with understanding the <i>scruffy</i>
+markup. Please subscribe &amp; send an email to the
+<a href="http://lists.nongnu.org/mailman/listinfo/scruf-friends">scruf-friends</a>
+mailing list. That way we can solve your problem together.
+</p>
+
+<p>
+go back to the <a href="./scruf-howto.html">scruf-howto</a>.
+</p>
+
+
+<footer>a <i>scruffy</i> markup.</footer>
+
+
+ <div class="source"> 
+
+ <a href="./scruffy-markup.scruffy">source</a> 
+ </div>
+<div class="back">
+<a href="./"> back </a>
+</div>
+</article>
+
+<div class="lastupdate">
+ Last Updated on: 21 December, 2012</div>
+
+<div class="scruf">
+<a href="http://nongnu.org/scruf/">powered by scruf</a>
+</div>
+
+</body>
+</html>

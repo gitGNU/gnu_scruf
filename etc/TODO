@@ -10,22 +10,9 @@ SCRUF - TODO		-*- mode: org; -*-
    introduce mark-up for lists. Weird that I have not implement
    yet.
 
-** [hp] documentation
-
-   introduction to 'scruf' & 'scruffy' mark-up. finished the initial
-   draft. It need to be edited and fine tuned.
-
 ** mark-up to center align text
 
 * distribution related
-
-** README file
-   a brief description of the project; pointer to website; notes on
-   the platform; a roadmap to important files; pointer to INSTALL
-   file; pointer to AUTHORS file; project NEWS.
-** INSTALL file
-   point to the manual where installation instruction can be found.
-** AUTHORS file
 ** NEWS file
    should contain information about new releases and features(if
    needed).
@@ -33,19 +20,7 @@ SCRUF - TODO		-*- mode: org; -*-
    not required for 0.1.0 release.
 ** FAQ file
    not required for 0.1.0 release.
-** checksum
-   md5sum.
-** manual
-   the manual file should also be part of the source distribution.
-
-** package & upload it in savannah
-
 * website
-  
-** create a documentation section in the homepage.
-   
-** create a mailing list section in the homepage
-
 * finished todos
   
 ** [done] ignore directories
@@ -72,3 +47,19 @@ SCRUF - TODO		-*- mode: org; -*-
 ** [done] mailing list
 ** [done] build rsiddharth's weblog
    Test it by generating rsiddharth's weblog using scruf.
+** [done] manual
+   the manual file should also be part of the source distribution.
+** [done] README file
+   a brief description of the project; pointer to website; notes on
+   the platform; a roadmap to important files; installation info
+   file; info about author; 
+
+** [done] create a documentation section in the homepage.
+   
+** [done] create a mailing list section in the homepage
+** [hp] documentation
+
+   introduction to 'scruf' & 'scruffy' mark-up. finished the initial
+   draft. It need to be edited and fine tuned.
+
+
