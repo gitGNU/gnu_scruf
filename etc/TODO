@@ -13,7 +13,6 @@ SCRUF - TODO		-*- mode: org; -*-
 ** mark-up to center align text
 
 * distribution related
-
 ** NEWS file
    should contain information about new releases and features(if
    needed).
@@ -21,11 +20,6 @@ SCRUF - TODO		-*- mode: org; -*-
    not required for 0.1.0 release.
 ** FAQ file
    not required for 0.1.0 release.
-** checksum
-*** read the gpg handbook and get yourself the gpg thingy.
-*** sign package. 
-** package & upload it to savannah
-   
 * website
 * finished todos
   
@@ -67,4 +61,5 @@ SCRUF - TODO		-*- mode: org; -*-
 
    introduction to 'scruf' & 'scruffy' mark-up. finished the initial
    draft. It need to be edited and fine tuned.
+
 
