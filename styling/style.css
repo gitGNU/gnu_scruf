@@ -6,7 +6,7 @@
 */
 
 article {
-	font-size:1.50em;
+	font-size:1.50em; /* 1.88 */
     font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     color:#787878;
     margin-left:auto;
@@ -69,7 +69,7 @@ div.code {
 	background-color:#fcfcfc;
     margin-left:auto;
     margin-right:auto;
-    border:1px;
+    border:1px solid #f0f0f0;
     padding:5px;
     width:70%;
 }
