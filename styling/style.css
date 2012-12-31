@@ -69,6 +69,8 @@ div.code {
 	background-color:#fcfcfc;
     margin-left:auto;
     margin-right:auto;
+	margin-top:5px;
+	margin-bottom:5px;
     border:1px solid #f0f0f0;
     padding:5px;
     width:70%;
@@ -108,7 +110,7 @@ a:link,a:visited {
  -webkit-transition:border-bottom 0.3s, color 0.3s;
  -o-transition:border-bottom 0.3s, color 0.3s;
  color:#686868;	 
- border-bottom:1px dotted #d9d9d9;
+ border-bottom:1px solid #d9d9d9;
  text-decoration:none;
 }
 a:hover,a:active {
@@ -154,7 +156,7 @@ div.lastupdate {
 }
 
 div.source {
-	font-size:0.4em;
+	font-size:0.5em;
 	font-family:monospace;
     text-align:center;
     color:#989898;
