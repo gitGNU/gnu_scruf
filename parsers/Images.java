@@ -28,7 +28,7 @@ public class Images implements Parser {
     private String openTag = "<img src=\"$1\" alt=\" \\[$";
     private String closeTag = " />";
     public String parse(String fileContent) {
-	Pattern pattern = Pattern.compile("\\{\\{(.+?\\.(png|jp[e]?g))(\\|(.+?))?\\}\\}", Pattern.DOTALL);
+	Pattern pattern = Pattern.compile("\\{\\{(.+?\\.(png|jp[e]?g|svg))(\\|(.+?))?\\}\\}", Pattern.DOTALL);
 	Matcher matcher = pattern.matcher(fileContent);
 	StringBuffer sbuffer = new StringBuffer();
 	StringBuilder replacementString =new StringBuilder();
