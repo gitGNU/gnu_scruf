@@ -25,7 +25,7 @@ import java.util.regex.*;
 
 public class Images implements Parser {
     // set of strings to build the img tag
-    private String openTag = "<img src=\"$1\" alt=\" \\[$";
+    private String openTag = "<img src=\"$1\" alt=\" \\[ $";
     private String closeTag = " />";
     public String parse(String fileContent) {
 	Pattern pattern = Pattern.compile("\\{\\{(.+?\\.(png|jp[e]?g|svg))(\\|(.+?))?\\}\\}", Pattern.DOTALL);
@@ -39,7 +39,7 @@ public class Images implements Parser {
 	    replacementString.append(openTag);
 	    // if the "title" is given add to the _img_ tag.
 	    if(matcher.group(3)!=null) {
-		replacementString.append("4\\] \" title=\"$4\"");
+		replacementString.append("4 \\] \" title=\"$4\"");
 	    }
 	    else {
 		replacementString.append("1\"");
