@@ -33,7 +33,7 @@ public class QuoteSpecialText implements Parser {
 		qmap.put(">","&gt;");
 	}
 	public String parse(String fileContent) {
-		Pattern pattern = Pattern.compile("(\\&\\#35\\;)|(\\&)|(\\<)|(\\>)");
+		Pattern pattern = Pattern.compile("(\\&(\\w+|\\#\\d+)\\;)|(\\&)|(\\<)|(\\>)");
 		Matcher matcher = pattern.matcher(fileContent);
 		StringBuffer sbuffer = new StringBuffer();
 		while(matcher.find() && matcher.group(1)==null) {

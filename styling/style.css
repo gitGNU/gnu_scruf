@@ -6,7 +6,7 @@
 */
 
 article {
-	font-size:1.50em;
+	font-size:1.50em; /* 1.88 */
     font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     color:#787878;
     margin-left:auto;
@@ -14,7 +14,7 @@ article {
     border:1px; 
     padding:5px;
     width:97%;
-    box-shadow: 1px 1.5px 3px 0.5px #bababa;	
+    box-shadow: 1px 1.5px 3px 0.5px #bababa;
 }
 
 h1, h2, h3, h4, h5 {
@@ -63,13 +63,19 @@ span.monospace {
     font-family:monospace;
 }
 
-div.code {
+pre {
+	display:block;
 	font-family:monospace;
 	font-size:0.625em;
+	word-break:break-all;
+	word-wrap:break-word;
+	white-space:pre-wrap;
 	background-color:#fcfcfc;
     margin-left:auto;
     margin-right:auto;
-    border:1px;
+	margin-top:5px;
+	margin-bottom:5px;
+    border:1px solid #f0f0f0;
     padding:5px;
     width:70%;
 }
@@ -108,7 +114,7 @@ a:link,a:visited {
  -webkit-transition:border-bottom 0.3s, color 0.3s;
  -o-transition:border-bottom 0.3s, color 0.3s;
  color:#686868;	 
- border-bottom:1px dotted #d9d9d9;
+ border-bottom:1px solid #d9d9d9;
  text-decoration:none;
 }
 a:hover,a:active {
@@ -121,12 +127,18 @@ div.back {
     font-size:0.7em;
     font-family:junicode,"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     text-align:center;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	opacity: 0.3;
     color:#989898;
     margin-left:auto;
     margin-right:auto;
     border:1px; 
     padding:5px;
     width:7%;
+}
+div.back:hover {
+	opacity: 1.0;
 }
 
 footer {
@@ -145,6 +157,9 @@ div.lastupdate {
 	font-size:0.6em;
 	font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     text-align:center;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	opacity:0.3;
     color:#989898;
     margin-left:auto;
     margin-right:auto;
@@ -153,28 +168,44 @@ div.lastupdate {
     width:40%;
 }
 
+div.lastupdate:hover {
+	opacity: 1.0;
+}
+
 div.source {
-	font-size:0.4em;
+	font-size:0.5em;
 	font-family:monospace;
     text-align:center;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	opacity: 0.3;
     color:#989898;
     margin-left:auto;
     margin-right:auto;
     border:1px; 
     padding:5px;
     width:40%;
+}
+div.source:hover {
+	opacity: 1.0;
 }
 
 div.scruf {
     font-size:0.9em;
     font-family:"Palatino Linotype","Book Antiqua",Palatino,"URW Palladio L",FreeSerif,serif;
     text-align:center;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	opacity: 0.3;
     color:#bcbcbc;
     margin-left:auto;
     margin-right:auto;
     border:1px; 
     padding:5px;
     width:40%;
+}
 
+div.scruf:hover {
+	opacity: 1.0;
 }
 

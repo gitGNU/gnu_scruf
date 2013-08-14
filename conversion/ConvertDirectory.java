@@ -50,6 +50,7 @@ public class ConvertDirectory {
 	IndexCreator index = new IndexCreator(directory);
 	// iterate through the directory.
 	System.out.println("Current Directory: "+directory.getAbsolutePath());
+	// the FileSieve parse for .scruffy files (except index.scruffy):
 	for(File file:directory.listFiles(new FileSieve())) {
 	    if(file.isFile()) {
 			can = canConvert.check(file);
@@ -57,9 +58,6 @@ public class ConvertDirectory {
 				System.out.println("Converting..."+file.getAbsolutePath());
 				html.convert(file);
 				index.add(file);
-				// check for style sheet in the directory; create/update
-				// if needed.
-				styleSheet.check(directory);
 			}
 	    }
 	    else if(file.isDirectory()) {
@@ -76,6 +74,11 @@ public class ConvertDirectory {
 	if(convertIndex) {
 		System.out.println("Converting..."+index.indexFile().getAbsolutePath());
 	    html.convert(index.indexFile());
+	}
+	// check whether this directory has scruffy files:
+	if(index.indexFile().exists()) {
+		// create/update stylesheet if need.
+		styleSheet.check(directory);
 	}
 	--DirectoryInfo.level;
     }

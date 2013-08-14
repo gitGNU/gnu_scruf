@@ -1,16 +1,11 @@
 SCRUF - TODO		-*- mode: org; -*-
 
 * features
-
-** build system (GNU auto tools)
-
-** test suite 
-
-** implement lists
-   introduce mark-up for lists. Weird that I have not implement
-   yet.
-
-** mark-up to center align text
+** proper semantic 
+** use markdownj for text to html5 conversion
+  that necessarily means scruffy markup will be done away with.
+** page format options -- stream, singleton, 
+** build system (ant system)
 
 * distribution related
 ** NEWS file
