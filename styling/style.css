@@ -60,6 +60,9 @@ span.monospace {
     padding: 1px;
     font-size:0.625em;
     font-family:monospace;
+	background-color: #fcfcfc;
+	border: 1px solid #f0f0f0;
+	padding: 2px;
 }
 
 pre {
