@@ -1,0 +1,65 @@
+Overview of the scruf source
+============================
+
+This section is for folks who wish to read/explore/hack/study/etc the
+source code.
+
+* Run.java : This is entry point for scruf. It contains the `main'
+  function starts the nuts & bolts of scruf.
+
+* parser/ : This directory contains all the `Parsers' and
+  related classes. 
+  
+  The 'Parser' interface is defined in Parser.java and all parsers
+  implement this interface. 
+
+  The functionality of a Parser is to convert a specific scruffy
+  markup into corresponding HTML5 element. For instance, the `Link'
+  parser converts scruffy marked up links into corresponding HTML5
+  links; The `CodeBlocks' parsers looks for code blocks in the marked up
+  file and converts the block into a HTML5 code block. 
+
+  `ParserList' class contains a list of all parsers that is used to
+  convert a scruffy markup file to valid HTML5.
+
+* conversion/ : Contains classes responsible for traversing
+  directories looking for scruffy marked up files & feeding the marked
+  up files to a list of parsers to convert into HTML5
+
+  `ConvertDirectory' class recursively traverses a directories & when
+  it finds a scruffy marked up file, it gives it to the `ConvertFile'
+  class to perform HTML5 conversion.
+
+  `ConvertFile' gets a scruffy marked up file and feeds the file to a
+  list of parsers to convert to HTML5 and writes the converted HTML5
+  file to the disk.
+
+  	+ ignore/ : This directory contains a class which help identify
+  	sub-directories that are to be ignored.
+
+* index/ : Contains the `IndexCreator' class which adds links to newly
+  converted HTML5 files to the directory's `index.scruffy' file
+
+  `index.scruffy' is created in directories that have scruffy marked
+  up files and it contains a list of links to all the HTML5 files
+  converted by scruf.
+
+* io/ : Contains classes for reading/writing files.
+
+* status/ : Contains the `PresentFile' class which has the details
+  about the marked up file that is being converted to HTML5.
+
+  The `DirectoryInfo' class has the `level' of the directory being
+  traversed with respect to the `root' directory.
+
+  The `root' directory is the top level directory given by the user to
+  perform HTML5 conversion.
+
+* styling/ : This directory contains the StyleChecker class which
+  makes sure that every directory, that has a scruffy marked up file,
+  contains a dedicated style sheet -- style.css.
+
+  The style.css is the default style sheet used by scruf.
+
+* docs/ directory: Contains documentation on how to install and use
+  scruf.
