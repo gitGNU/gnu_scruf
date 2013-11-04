@@ -1,6 +1,5 @@
 /*+
- *   Copyright 2012 rsiddharth
- *   Email: <rsiddharth@ninthfloor.org> 
+ *   Copyright 2012, 2013 rsiddharth <rsiddharth@ninthfloor.org>
  * 
  *   This file is part of Scruf.
  *

@@ -1,6 +1,5 @@
 /*+
- *   Copyright 2012 rsiddharth
- *   Email: <rsiddharth@ninthfloor.org> 
+ *   Copyright 2012, 2013 rsiddharth <rsiddharth@ninthfloor.org>
  * 
  *   This file is part of Scruf.
  *
@@ -39,10 +38,10 @@ public class Images implements Parser {
 	    replacementString.append(openTag);
 	    // if the "title" is given add to the _img_ tag.
 	    if(matcher.group(3)!=null) {
-		replacementString.append("4 \\] \" title=\"$4\"");
+		replacementString.append("4 \\]\" title=\"$4\"");
 	    }
 	    else {
-		replacementString.append("1\"");
+		replacementString.append("1 \\]\"");
 	    }
 	    // close the _img_ tag.
 	    replacementString.append(closeTag);

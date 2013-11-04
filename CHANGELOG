@@ -1,0 +1,22 @@
+SCRUF - CHANGELOG
+=================
+
+This file contains information about the changes made in different
+versions of scruf.
+
+scruf v0.1.1
+=============
+
+* <pre> element is used to wrap code blocks.
+
+* SVG images can now be included in the scruffy markup.
+
+* Regex in parsers/QuoteSpecialText.java was changed to accomadate all
+  HTML codes.
+
+* Bunch of changes to the stylesheet.
+
+scruf v0.1.0
+============
+
+* First public version of scruf.
