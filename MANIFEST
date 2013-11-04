@@ -60,6 +60,3 @@ source code.
   contains a dedicated style sheet -- style.css.
 
   The style.css is the default style sheet used by scruf.
-
-* docs/ directory: Contains documentation on how to install and use
-  scruf.
