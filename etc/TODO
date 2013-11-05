@@ -1,10 +1,12 @@
 SCRUF - TODO		-*- mode: org; -*-
 
 * features
-
 ** one stylesheet for a directory and all its subdirectory.
    At present, each directory, irrespective of whether it is a
    subdirectory or not, has one stylesheet. This is just bad design.
 ** bzr -> git
    I might want to switch the vcs to git. This is not going to happen
    any time soon, though.
+
+* documentation
+** list mark up should be documented.
