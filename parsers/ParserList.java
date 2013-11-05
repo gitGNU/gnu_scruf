@@ -33,7 +33,8 @@ public class ParserList {
 	parsers.add(new DocumentDate());
 	parsers.add(new WordDecoration());
 	parsers.add(new Headings());
-	parsers.add(new Links());		
+	parsers.add(new Links());
+	parsers.add(new UList());
 	parsers.add(new Images());
 	parsers.add(new Audio());
 	parsers.add(new Footer());
