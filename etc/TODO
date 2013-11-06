@@ -1,60 +1,12 @@
 SCRUF - TODO		-*- mode: org; -*-
 
 * features
-** proper semantic 
-** use markdownj for text to html5 conversion
-  that necessarily means scruffy markup will be done away with.
-** page format options -- stream, singleton, 
-** build system (ant system)
+** one stylesheet for a directory and all its subdirectory.
+   At present, each directory, irrespective of whether it is a
+   subdirectory or not, has one stylesheet. This is just bad design.
+** bzr -> git
+   I might want to switch the vcs to git. This is not going to happen
+   any time soon, though.
 
-* distribution related
-** NEWS file
-   should contain information about new releases and features(if
-   needed).
-** HISTORY file
-   not required for 0.1.0 release.
-** FAQ file
-   not required for 0.1.0 release.
-* website
-* finished todos
-  
-** [done] ignore directories
-   way to ignore directories 
-
-** [done] move PresentFile.java to status/
-
-** [done] extension for scruffy files
-   extension for scruff marked-up files to make discovery easier.
-
-** [done] modify conversion/CanConvert.java (bug)
-
-** [done] link to scruffy source
-   include a link or something to view the 'source'.
-
-** [done] 'quote' special symbols inside a code-block.
-** [done] 'last update' string
-  the 'last updated' string must be dangled somewhere in the document
-  that is licked by scruf.
-
-** [done] <meta> tags
-   introduce 'meta' info in html doc generated -- authorinfo.
-
-** [done] mailing list
-** [done] build rsiddharth's weblog
-   Test it by generating rsiddharth's weblog using scruf.
-** [done] manual
-   the manual file should also be part of the source distribution.
-** [done] README file
-   a brief description of the project; pointer to website; notes on
-   the platform; a roadmap to important files; installation info
-   file; info about author; 
-
-** [done] create a documentation section in the homepage.
-   
-** [done] create a mailing list section in the homepage
-** [hp] documentation
-
-   introduction to 'scruf' & 'scruffy' mark-up. finished the initial
-   draft. It need to be edited and fine tuned.
-
-
+* documentation
+** list mark up should be documented.
