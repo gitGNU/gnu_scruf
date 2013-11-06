@@ -1,6 +1,6 @@
 /*+
  *   Copyright 2012, 2013 rsiddharth <rsiddharth@ninthfloor.org>
- * 
+ *
  *   This file is part of Scruf.
  *
  *   Scruf is free software: you can redistribute it and/or modify
@@ -35,7 +35,7 @@ public class UList implements Parser {
     public String parse(String fileContent) {
 		StringBuffer sbuffer = new StringBuffer();
 		matcher = pattern.matcher(fileContent);
-		
+
 		int lastEnd=0;
 		while(matcher.find()) {
 			int diff = matcher.start() - lastEnd;
@@ -48,7 +48,7 @@ public class UList implements Parser {
 				// means, we are at a new list now.
 				// so, got close the ol' one.
 				sbuffer.append("\n</ul>\n");
-				
+
 				// open the new list.
 				matcher.appendReplacement(sbuffer, "<ul>\n " + list);
 			}
@@ -56,7 +56,7 @@ public class UList implements Parser {
 				matcher.appendReplacement(sbuffer, list);
 			}
 			lastEnd = matcher.end();
-			
+
 		}
 		// close the last found list
 		if(lastEnd !=0) // meaning a list was found.
