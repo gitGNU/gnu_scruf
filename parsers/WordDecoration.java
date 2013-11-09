@@ -30,9 +30,9 @@ public class WordDecoration implements Parser {
 	private SymbolMap symbolMap;
     public WordDecoration() {
 	tagMap = new HashMap<String, String>();
-	tagMap.put("''","<i>$7</i>");
+	tagMap.put("''","<em>$7</em>");
 	tagMap.put("__","<u>$7</u>");
-	tagMap.put("'''","<b>$7</b>");
+	tagMap.put("'''","<strong>$7</strong>");
 	tagMap.put("%%%","<blockquote>$7</blockquote>");
 	symbolMap = new SymbolMap();
     }
