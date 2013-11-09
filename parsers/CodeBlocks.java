@@ -34,9 +34,9 @@ public class CodeBlocks implements Parser {
 	StringBuilder replacement = new StringBuilder();
 	while(matcher.find()) {
 	    replacement.delete(0,replacement.length());
-	    replacement.append("<pre>");
+	    replacement.append("<pre><code>");
 		replacement.append(lbreak.parse(symbolMap.quote(matcher.group(3))));
-	    replacement.append("</pre>");
+	    replacement.append("</code></pre>");
 	    matcher.appendReplacement(sbuffer,replacement.toString());
 	}
 	matcher.appendTail(sbuffer);
