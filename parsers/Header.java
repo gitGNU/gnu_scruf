@@ -32,10 +32,11 @@ public class Header implements Parser {
 	sbuilder = new StringBuilder();
 
 	// Embed necessay headers.
-	sbuilder.append("<!DOCTYPE html> \n");
-	sbuilder.append("<head> \n");
+	sbuilder.append("<!DOCTYPE html>\n");
+	sbuilder.append("<head>\n");
 	sbuilder.append("<meta charset=\"UTF-8\">\n");
-	sbuilder.append(" <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" /> \n");
+	sbuilder.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n");
+	sbuilder.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />\n");
 	sbuilder.append("<meta name=\"author\" content=\""+PresentFile.author+"\">\n");
 	sbuilder.append("<title>");
 	sbuilder.append(PresentFile.name);
