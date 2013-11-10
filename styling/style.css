@@ -12,12 +12,10 @@ body {
     margin-left:auto;
     margin-right:auto;
     width:100%;
-	max-width: 720px;
+	max-width: 500px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	border:1px;
-    padding:5px;
     text-align:center;
 }
 
@@ -45,17 +43,16 @@ h6 {
 	font-size: 1.55em;
 }
 
-p, em, strong {
-    padding:5px;
+p, em, strong, ul {
     text-align:justify;
-    line-height:170%;
+    line-height: 1.7em;
     -moz-word-wrap:break-word;
 }
 
 p, em, strong, blockquote, pre, ul{
    margin-left:auto;
    margin-right:auto;
-   width:70%;
+   width: 95%;
 }
 
 .center {
@@ -63,9 +60,11 @@ p, em, strong, blockquote, pre, ul{
 }
 
 blockquote {
+    padding-left: 0.50em;
     font-size:0.90em;
     text-align:justify;	
     background-color:#fcfcfc;
+    border-left: 0.40em solid #bababa;
 }
 
 span.monospace {
@@ -75,7 +74,7 @@ span.monospace {
     font-family:monospace;
 	background-color: #fcfcfc;
 	border: 1px solid #f0f0f0;
-	padding: 2px;
+	padding: 0.125em;
 }
 
 pre {
@@ -90,23 +89,17 @@ pre {
 	margin-top:5px;
 	margin-bottom:5px;
     padding:5px;
-
 }
 
 ul {
-    border: 1px;
-    padding:5px;
-    line-height:170%;
     list-style: square;
     list-style-position: inside;
 }
 
 
-div.time {
+.time {
 	font-size:0.70em;
 	color:#aaaaaa;
-    border:1px;
-    padding:5px;
     text-align:center;
 }
 
@@ -114,16 +107,13 @@ img {
     margin-left:auto;
     margin-right:auto;
     display:block;
-    border: 1px;
-    padding: 10px;
+    max-width: 100%;
 }
 
 audio {
 	margin-left:auto;
     margin-right:auto;
     display:block;
-	border: 1px;
-    padding: 10px;
 }
 
 a {
@@ -145,12 +135,11 @@ a:hover {
 	border-bottom: 0;
 }
 
-div.back {
-    font-size:0.8em;
+.back {
+    font-size:0.9em;
     text-align:center;
     color:#989898;
-    border:1px; 
-    padding:5px;
+    margin-top: 0.3em;
 }
 
 footer {
@@ -158,41 +147,33 @@ footer {
     text-align:center;
     color:#888888;
 	margin-top: 1.2em;
-    border:1px; 
-    padding:5px;
 }
 
-div.lastupdate {
-	font-size:0.7em;
+.lastupdate {
+    font-size:0.6em;
     text-align:center;
     color:#989898;
 	margin-top: 1.2em;
-/*	border-top: 1px solid #dadada;*/
-    padding:5px;
 }
 
-div.source {
+.source {
 	font-size:0.7em;
 	font-family:monospace;
     text-align:center;
-	margin-top: 0.5em;
-    border:1px; 
-    padding:5px;
+    margin-top: 0.8em;
 }
 
 
-div.scruf {
+.scruf {
     font-size:0.8em;
     text-align:center;
 	transition: opacity 1s;
 	-webkit-transition: opacity 1s;
 	opacity: 0.5;
     color:#bcbcbc;
-    border:1px; 
-    padding:5px;
-
+    margin-top: 0.7em;
 }
 
-div.scruf:hover {
+.scruf:hover {
 	opacity: 1.0;
 }
