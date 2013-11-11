@@ -1,12 +1,17 @@
 SCRUF - TODO		-*- mode: org; -*-
 
 * features
-** one stylesheet for a directory and all its subdirectory.
+** server/ directory
+   this is the directory where the stylesheet, #include files are
+   place.
+*** one stylesheet for a directory and all its subdirectory.
    At present, each directory, irrespective of whether it is a
    subdirectory or not, has one stylesheet. This is just bad design.
-** bzr -> git
-   I might want to switch the vcs to git. This is not going to happen
-   any time soon, though.
+*** #include feature which smears HTML from another file.
+** HTML in scruffy
+   At present scruffy markup files should not contain any HTML. I
+   guess that's stupid design.
 
+   Therefore, need to enable HTML markup in scruffy.
 * documentation
 ** list mark up should be documented.
