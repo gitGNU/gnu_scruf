@@ -35,6 +35,9 @@ public class ConvertFile {
 		htmlFile = new CreateHtmlFile();
     }
     public void convert(File file) {
+		readFile = new ReadFile(file);
+		String fileContent = readFile.getContent();
+
 		/**
 		 * takes the present file reference
 		 * for use outside this method.
@@ -42,13 +45,12 @@ public class ConvertFile {
 		PresentFile.file = file;
 		PresentFile.name = null;
 		PresentFile.author = null;
-		readFile = new ReadFile(file);
-		String fileContent = readFile.getContent();
+		PresentFile.fileContent = fileContent;
+
 		if(!fileContent.equals("")) {
 			// start conversion.
 			for(Parser p:parsers) {
 				fileContent = p.parse(fileContent);
-				
 			}
 		}
 		// Write to corresponding html file.
