@@ -24,7 +24,7 @@ import java.util.regex.*;
 
 public class DocumentDate implements Parser {
 	public String parse(String fileContent) {
-		String timeTag = "<div class=\"time\"> $2 </div> \n";
+		String timeTag = "<div class=\"time\">$2</div>";
 		StringBuffer sbuffer = new StringBuffer();
 		Pattern pattern = Pattern.compile("(\\$\\$\\$)(.+?)(\\1)");
 		Matcher matcher = pattern.matcher(fileContent);

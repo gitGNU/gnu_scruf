@@ -27,9 +27,9 @@ public class Source implements Parser {
 	public String parse(String fileContent) {
 		sbuilder = new StringBuilder(fileContent);
 		// append a link to the source.
-		sbuilder.append("\n <div class=\"source\"> \n");
+		sbuilder.append("\n <div class=\"source\">\n");
 		sbuilder.append("\n <a href=\"./"+PresentFile.file.getName()+
-						"\">source</a> \n </div>");
+						"\">source</a>\n </div>");
 		return sbuilder.toString();
 	}
 }

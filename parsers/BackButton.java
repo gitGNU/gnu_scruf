@@ -37,9 +37,9 @@ public class BackButton implements Parser {
 			fileBuilder.append("\n<div class=\"back\">\n");
 			fileBuilder.append("<a href=\"");
 			if(fileName.equals("index.scruffy")) {
-				fileBuilder.append("../\"> back ");
+				fileBuilder.append("../\">back");
 			}else {
-				fileBuilder.append("./\"> back ");
+				fileBuilder.append("./\">back");
 			}
 			fileBuilder.append("</a>\n");
 			fileBuilder.append("</div>\n");
