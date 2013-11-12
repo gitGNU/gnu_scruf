@@ -1,0 +1,6 @@
+NOTES  -*- mode: org; -*-
+
+* HTML in scruffy file
+* special characters are not escaped between HTMLblocks.
+* HTML tags with no end tag must be closed properly.
+  eg: <tagname />

@@ -20,24 +20,40 @@
 
 package scruf.parsers;
 
+import scruf.status.*;
 import java.util.*;
 import java.util.regex.*;
 
 public class QuoteSpecialText implements Parser {
-	Map<String,String> qmap;
+	private Map<String,String> qmap;
+	private DetectHTMLTag detectTag;
 	public QuoteSpecialText() {
 		qmap = new HashMap<String,String>();
 		qmap.put("&","&amp;");
 		qmap.put("<","&lt;");
-		qmap.put(">","&gt;");
 	}
 	public String parse(String fileContent) {
-		Pattern pattern = Pattern.compile("(\\&(\\w+|\\#\\d+)\\;)|(\\&)|(\\<)|(\\>)");
+		detectTag = new DetectHTMLTag();
+		Pattern pattern = Pattern.compile("(\\&(\\w+|\\#\\d+)\\;)|(\\<)|(\\&)");
+		Pattern loneHtmlPattern = Pattern.compile("^\\<\\w+? .*?\\/\\>", Pattern.DOTALL);
 		Matcher matcher = pattern.matcher(fileContent);
 		StringBuffer sbuffer = new StringBuffer();
-		while(matcher.find() && matcher.group(1)==null) {
-			matcher.appendReplacement(sbuffer,
-									  qmap.get(matcher.group()));
+		while(matcher.find()) {
+			if(matcher.group(1)!=null) {
+				// found HTML code, don't do anything
+				// continue.
+				continue;
+			}
+			String subString = fileContent.substring(matcher.start());
+			boolean quote = !detectTag.isHtmlTag(subString) &&
+				!detectTag.insideHtmlBlock() &&
+				!loneHtmlPattern.matcher(subString).find();
+			if(quote) {
+				matcher.appendReplacement(sbuffer,
+										  qmap.get(matcher.group()));
+			}else {
+				System.out.println("Not Escaping" + subString.split(">")[0] + ">");
+			}
 		}
 		matcher.appendTail(sbuffer);
 		return sbuffer.toString();
