@@ -11,7 +11,7 @@ body {
     color:#686868;
     margin-left:auto;
     margin-right:auto;
-    width:100%;
+    width: 97%;
 	max-width: 500px;
 }
 
@@ -138,18 +138,27 @@ a:hover {
 
 .button {
 	margin: 1em 0.2em 0.2em;
-	padding: 0.235em;
+	padding: 0.235em 1em 0.235em;
 	display: inline-block;
 	background-color: #f5f5f5;
 	border: 1px solid #efefef;
+	cursor: pointer;
 }
 
-.button a:link {
+@media (min-width:320px) and (max-width:360px) {
+	.button {
+		display: block;
+		width: 80%;
+		margin: 0.5em auto 0.4em;
+	}
+}
+
+.button {
 	border:0;
 }
 
-.button a:hover {
-	background-color:inherit;
+.button:hover {
+	background-color:#f7f7f7;
 }
 
 .perma-link {
