@@ -21,18 +21,14 @@
 package scruf.parsers;
 
 import java.util.regex.*;
-
+import scruf.status.*;
 public class Paragraphs implements Parser {
-    private String paragraph = "<p>\n$0</p>\n";
+    private String paragraph = "<p>$0</p>";
+	private DetectHTMLTag detectTag;
     public String parse(String fileContent) {
+	detectTag = new DetectHTMLTag();
 	/**
-	 * This regex contains two parts seperated by a '|'; the first
-	 * part is regex for a html Heading (See Heading.java) and the
-	 * second part is the regex for a paragraph. For an input, if
-	 * the first part of the regex is matched, then it is
-	 * necessarily a Heading, so, we ignore it; but if the second
-	 * part of the regex is matched for an input, then it is a
-	 * paragraph, so, we put the necessary tags in place.
+	 * The pattern for matching paragraphs
 	 */
 	Pattern pattern = Pattern.compile("(^.+$\\n)+",Pattern.MULTILINE);
 	/**
@@ -42,21 +38,15 @@ public class Paragraphs implements Parser {
 	Matcher matcher = pattern.matcher(fileContent);
 	Matcher htmlTag;
 	StringBuffer sbuffer = new StringBuffer();
+
 	while(matcher.find()) {
-	    /**
-	     * give the paragraph that is identified htmlTagPattern
-	     * and see whether the "paragraph" that is actually
-	     * deducted is some other html block like <h1> (heading)
-	     * or <blockquote>, etcetera. If "matcher.find()" has
-	     * actually found a html block then we don't need to do
-	     * the conversion.
-	     */
 	    htmlTag = htmlTagPattern.matcher(matcher.group());
-	    /**
-	     * if "matcher.find()" _has not_ deducted a html block,
-	     * then we do the conversion.
-	     */
-	    if(!htmlTag.find()) {
+
+		String subString = fileContent.substring(matcher.start());
+		boolean htmlTagP = htmlTag.find();
+		boolean htmlInScruffy = detectTag.isHtmlInScruffy(subString);
+		boolean pWrap = !htmlTagP && !htmlInScruffy;
+	    if(pWrap) {
 			matcher.appendReplacement(sbuffer,paragraph);
 	    }
 	}
