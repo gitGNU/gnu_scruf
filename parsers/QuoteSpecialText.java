@@ -56,6 +56,7 @@ public class QuoteSpecialText implements Parser {
 			}
 		}
 		matcher.appendTail(sbuffer);
+		System.out.println("BANGA BANG!");
 		return sbuffer.toString();
 	}
 }

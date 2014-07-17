@@ -38,7 +38,7 @@ public class Paragraphs implements Parser {
 	Matcher matcher = pattern.matcher(fileContent);
 	Matcher htmlTag;
 	StringBuffer sbuffer = new StringBuffer();
-
+	System.out.println("Paragraph BANG.");
 	while(matcher.find()) {
 	    htmlTag = htmlTagPattern.matcher(matcher.group());
 
@@ -51,6 +51,7 @@ public class Paragraphs implements Parser {
 	    }
 	}
 	matcher.appendTail(sbuffer);
+	System.out.println("Paragraph BANG EXIT.");
 	return sbuffer.toString();
     }
 }

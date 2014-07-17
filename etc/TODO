@@ -15,3 +15,5 @@ SCRUF - TODO		-*- mode: org; -*-
    Therefore, need to enable HTML markup in scruffy.
 * documentation
 ** list mark up should be documented.
+* bugs
+** the Paragraphs parser has a serious bug, which is creating un-acceptable delays in parsing.
