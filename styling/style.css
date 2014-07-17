@@ -70,7 +70,7 @@ blockquote {
 span.monospace {
     border: 1px;
     padding: 1px;
-    font-size:0.80em;
+    font-size:1.0em;
     font-family:monospace;
 	background-color: #fcfcfc;
 	border: 1px solid #f0f0f0;
@@ -82,13 +82,17 @@ pre {
 	border: 1px solid #f0f0f0;
 	display:block;
 	font-family:monospace;
-	font-size:0.80em;
+	font-size: 1.0em;
 	word-break:break-all;
 	word-wrap:break-word;
 	white-space:pre-wrap;
 	margin-top:5px;
 	margin-bottom:5px;
     padding:5px;
+}
+
+sup {
+	font-size: 0.6em;
 }
 
 ul {
