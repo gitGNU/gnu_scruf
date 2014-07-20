@@ -83,9 +83,7 @@ pre {
 	display:block;
 	font-family:monospace;
 	font-size: 1.0em;
-	word-break:break-all;
-	word-wrap:break-word;
-	white-space:pre-wrap;
+	overflow:auto;
 	margin-top:5px;
 	margin-bottom:5px;
     padding:5px;
