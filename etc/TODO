@@ -8,11 +8,6 @@ SCRUF - TODO		-*- mode: org; -*-
    At present, each directory, irrespective of whether it is a
    subdirectory or not, has one stylesheet. This is just bad design.
 *** #include feature which smears HTML from another file.
-** HTML in scruffy
-   At present scruffy markup files should not contain any HTML. I
-   guess that's stupid design.
-
-   Therefore, need to enable HTML markup in scruffy.
 * documentation
 ** list mark up should be documented.
 * bugs
